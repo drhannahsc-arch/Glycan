@@ -1,0 +1,14 @@
+# CH-π stacking parameters from synthetic host-guest systems
+#
+# Sources:
+#   Series A: Laughrey ZR et al. (2008) — aromatic cage hosts
+#   Series B: Diederich cyclophane hosts
+#   Series C: Asensio JL et al. (2013) Acc. Chem. Res. 46:946 — sugar model data
+#
+# Phase G3: ε_CH-π = (ΔG_measured − ΔG_other_terms) / n_CH_pi_contacts
+# Expected range: −1.5 to −3.0 kJ/mol per contact (Nishio consensus)
+#
+series,host,guest,dG_measured_kJ,dG_other_terms_kJ,n_CH_pi_contacts,eps_per_contact_kJ,source_doi,notes
+A,,,,,,,,"Laughrey 2008 — fill from paper"
+B,,,,,,,,"Diederich cyclophanes — fill from paper"
+C,,,,,,,,"Asensio 2013 model systems — fill from review"

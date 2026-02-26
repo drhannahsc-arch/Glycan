@@ -1,0 +1,15 @@
+# Davis AP (2012) Nature Chem. 4:548
+# Glucose-selective synthetic receptor in water
+#
+# THIS IS THE ANSWER KEY FOR PREDICTION 7.
+# Davis receptor shows OPPOSITE selectivity from ConA:
+#   Davis: Glc > Gal > Man
+#   ConA:  Man > Glc >> Gal
+# Same parameters must predict both. This is the poster headline.
+#
+sugar,Ka_M,dG_kJ,selectivity_ratio_vs_glucose,notes
+D-glucose,,,1.0,reference
+D-galactose,,,,
+D-mannose,,,,
+D-fructose,,,,if available
+GlcNAc,,,,if available

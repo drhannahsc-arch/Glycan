@@ -1,0 +1,46 @@
+# CORRECTED CITATION:
+# Schwarz FP (1997) J. Solution Chem. 26:471-485
+# "Enthalpy of solution of carbohydrates using a modified DSC"
+# NOT Thermochimica Acta 284:129 as cited in spec (citation error in spec)
+#
+# ACTUAL COVERAGE (from abstract):
+#   Deoxy-glucose: C1, C2, C3, C6 (NO C4-deoxy, only C4-fluoro)
+#   Fluoro-glucose: C1, C2, C3, C4, C6
+#   Mannose: PARENT ONLY (no mannose deoxy series)
+#   Galactose: NOT COVERED
+#   Also: αMeOGlu, αPheOGlu, 3MeOGlu
+#   Temperatures: 15.1, 25.0, 35.0, 45.1°C
+#
+# VALUES BELOW: Placeholders awaiting paper table extraction.
+# ΔΔH = ΔH_sol(parent) − ΔH_sol(deoxy) = hydration cost of removed OH
+# Positive ΔΔH means that OH was favorably hydrated (costs energy to remove).
+#
+# SUPPLEMENTARY SOURCES NEEDED for mannose/galactose deoxy series:
+#   - Jasra & Ahluwalia (1982) J. Solution Chem. 11:325 (sugars + polyols at 25/35°C)
+#   - Galema et al. (1989) J. Phys. Chem. 93:7003 (heat capacity of sugar solutions)
+#   - Banipal et al. (2010) J. Chem. Thermodyn. 42:696
+#   - Franks et al. (1972) J. Solution Chem. 1:3 (referenced in Schwarz)
+#   - Tait et al. (1972) J. Solution Chem. 1:131
+#
+compound,dH_sol_kJ_mol,temperature_C,OH_position_removed,OH_stereochemistry,source,notes
+# === GLUCOSE SERIES (Schwarz 1997, J. Solution Chem.) ===
+alpha-D-glucose,,25.0,parent,,Schwarz 1997,parent sugar
+1-deoxy-D-glucose,,25.0,C1,ax (alpha),Schwarz 1997,1HGlu in paper
+2-deoxy-D-glucose,,25.0,C2,eq,Schwarz 1997,2HGlu in paper
+3-deoxy-D-glucose,,25.0,C3,eq,Schwarz 1997,3HGlu in paper
+6-deoxy-D-glucose,,25.0,C6,eq,Schwarz 1997,6HGlu = quinovose
+4-fluoro-D-glucose,,25.0,C4,eq,Schwarz 1997,4FGlu; F replaces OH (different physics than deoxy)
+# === METHOXY DERIVATIVES ===
+alpha-MeO-D-glucopyranoside,,25.0,C1,methoxy,Schwarz 1997,αMeOGlu
+alpha-PheO-D-glucopyranoside,,25.0,C1,phenoxy,Schwarz 1997,αPheOGlu
+3-MeO-D-glucopyranoside,,25.0,C3,methoxy,Schwarz 1997,3MeOGlu
+# === MANNOSE (parent only) ===
+D-mannose,,25.0,parent,,Schwarz 1997,no deoxy mannose in Schwarz
+# === JASRA 1982 DATA (J. Solution Chem. 11:325) ===
+D-glucose,,25.0,parent,,Jasra 1982,cross-check with Schwarz
+D-mannose,,25.0,parent,,Jasra 1982,cross-check with Schwarz
+D-galactose,,25.0,parent,,Jasra 1982,
+D-fructose,,25.0,parent,,Jasra 1982,
+sucrose,,25.0,parent,,Jasra 1982,
+myo-inositol,,25.0,parent,,Jasra 1982,polyol reference
+D-sorbitol,,25.0,parent,,Jasra 1982,polyol reference

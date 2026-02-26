@@ -1,0 +1,6 @@
+mutant,dG_kcal_mol,ddG_kcal_mol,source,structural_notes,VERIFIED
+WT (HEWL),,0.0,Kumagai 1993 Eur J Biochem 212:151; ITC: García-Hernández 2002,1LZB — WT binds (GlcNAc)3 in A-B-C mode only,[ ]
+W62Y,,,Kumagai 1993; Maenaka 1995 J Mol Biol 247:281,1LZG — binds in TWO modes (A-B-C + B-C-D); fewer stacking contacts,[ ]
+W62F,,,Kumagai 1993; Maenaka 1995,1LZC — even weaker B-site binding; no H-bond network at C-site,[ ]
+W62H,,,Kumagai 1993; Muraki 1998 Biochim Biophys Acta 1382:189,drastic change: prefers minor binding mode; ratio A-E/B-F → 0.8:1 vs 4:1 WT,[ ]
+W108Y,,,literature,buried Trp — less surface-exposed than W62,[ ]

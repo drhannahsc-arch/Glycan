@@ -1,0 +1,15 @@
+# Jasra RV, Ahluwalia JC (1982) J. Solution Chem. 11:325
+# Enthalpies of solution of sugars and polyols
+#
+# Used to extract k_desolv_NAc by comparing GlcNAc vs Glc.
+# Also provides cross-check values for k_desolv_eq/ax.
+#
+compound,dH_sol_kJ_mol,temperature_C,notes
+D-glucose,,25,cross-check with Schwarz
+D-mannose,,25,cross-check with Schwarz
+D-galactose,,25,
+D-fructose,,25,
+N-acetyl-D-glucosamine,,25,GlcNAc — compare to Glc for NAc cost
+sucrose,,25,disaccharide cross-check
+maltose,,25,disaccharide cross-check
+myo-inositol,,25,cyclohexane polyol reference

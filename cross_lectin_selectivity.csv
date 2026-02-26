@@ -1,0 +1,21 @@
+lectin,sugar,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,source,T_C,VERIFIED
+# === CONCANAVALIN A (Man/Glc specific) ===
+ConA,MeαMan,8240,-5.35,-8.4,-3.05,"Chervenak 1995; Dam & Brewer 2002 Table 1",25,[x]
+ConA,MeαGlc,2100,-4.53,,,"Dam & Brewer 2002 Table 1",25,[x]
+ConA,D-mannose,8200,-5.34,,,"Dam & Brewer 2002",25,[x]
+ConA,MeαGal,0,,,,Chervenak 1995,25,[x] no detectable binding
+# === WHEAT GERM AGGLUTININ (GlcNAc specific) ===
+WGA,GlcNAc,400,-3.56,-6.1,-2.54,"Bains et al. 1992 (PMID:1472499)",26,[x]
+WGA,(GlcNAc)2,5300,-5.10,-15.6,-10.50,"Bains et al. 1992",26,[x]
+WGA,(GlcNAc)3,11100,-5.53,-19.4,-13.87,"Bains et al. 1992",26,[x]
+# === PEANUT AGGLUTININ (Gal specific; does NOT bind GalNAc) ===
+PNA,D-galactose,,,,,"Swaminathan 1998 — NEEDS RETRIEVAL",25,[ ]
+PNA,D-lactose,,,,,"Swaminathan 1998 — NEEDS RETRIEVAL",25,[ ]
+PNA,D-glucose,,,,,"Swaminathan 1998 — expect no binding",25,[ ]
+# === GALECTIN-3 (β-galactoside specific) ===
+Galectin-3,LacNAc,,,,,"Seetharaman 1998 — NEEDS RETRIEVAL",25,[ ]
+Galectin-3,D-lactose,,,,,"Seetharaman 1998 — NEEDS RETRIEVAL",25,[ ]
+Galectin-3,D-galactose,,,,,"Seetharaman 1998 — NEEDS RETRIEVAL",25,[ ]
+# === SOYBEAN AGGLUTININ (GalNAc/Gal specific) ===
+SBA,D-GalNAc,,,,,"Dam & Brewer 2002 Table — NEEDS RETRIEVAL",25,[ ]
+SBA,D-galactose,,,,,"Dam & Brewer 2002 Table — NEEDS RETRIEVAL",25,[ ]

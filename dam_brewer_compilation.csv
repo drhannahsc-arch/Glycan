@@ -1,0 +1,26 @@
+# Dam TK, Brewer CF (2002) Chem. Rev. 102:387
+# Thermodynamic studies of lectin-carbohydrate interactions by ITC
+#
+# Master compilation. Tables 1-3 contain most answer keys.
+#
+# Prediction 2: Epimer selectivity (Man vs Glc vs Gal in ConA, etc.)
+# Prediction 4: Chain extension (mono→di→tri mannose in ConA)
+# Prediction 6: Cross-lectin selectivity (4 lectins × 5 sugars)
+#
+# All Ka in M⁻¹. ΔG = -RT ln(Ka) at listed temperature.
+#
+lectin,sugar,Ka_M,dG_kJ,dH_kJ,TdS_kJ,temperature_C,table_number,notes
+ConA,D-mannose,,,,,,1,
+ConA,D-glucose,,,,,,1,
+ConA,D-galactose,,,,,,1,
+ConA,methyl-alpha-D-mannopyranoside,,,,,,1,
+ConA,dimannose (Man-alpha-1-3-Man),,,,,,2,Prediction 4
+ConA,trimannose (Man-alpha-1-3-[Man-alpha-1-6]-Man),,,,,,2,Prediction 4
+WGA,GlcNAc,,,,,,,"Bains 1992 if not in Dam"
+WGA,GalNAc,,,,,,,"Bains 1992 if not in Dam"
+WGA,chitobiose (GlcNAc-beta-1-4-GlcNAc),,,,,,,"Bains 1992"
+PNA,D-galactose,,,,,,,"Swaminathan 1998"
+PNA,D-glucose,,,,,,,"Swaminathan 1998"
+Galectin-3,D-galactose,,,,,,,"Seetharaman 1998"
+Galectin-3,D-glucose,,,,,,,"Seetharaman 1998"
+Galectin-3,lactose,,,,,,,"Seetharaman 1998"

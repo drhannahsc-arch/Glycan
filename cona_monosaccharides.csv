@@ -1,0 +1,9 @@
+sugar,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,source,notes,VERIFIED
+MeαMan,8240,-5.35,-8.4,-3.1,Chervenak 1995; confirmed 7.6e3-8.3e3 across labs,Prediction 2 reference,[ ]
+MeαGlc,2100,-4.53,-6.8,-2.3,Dam & Brewer 2002 Table 1,weaker than Man; C2-OH eq=ax swap,[ ]
+MeαGal,0,,,,Chervenak 1995 / consensus,no detectable binding; C4-OH axial,[ ]
+D-Mannose,900,-4.03,,,Goldstein compilation,"free reducing sugar, anomeric mixture",[ ]
+D-Glucose,400,-3.55,,,Goldstein compilation,free reducing sugar,[ ]
+D-Galactose,0,,,,consensus,no binding,[ ]
+GlcNAc,1000,-4.09,,,Dam & Brewer 2002,N-acetyl group tolerated at C2,[ ]
+ManNAc,200,,,,estimated,CHECK: confirm from Dam & Brewer,[ ]

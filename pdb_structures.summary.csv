@@ -1,0 +1,7 @@
+pdb_id,lectin,sugar,resolution_A,ligand_ids,predictions
+1A3K,Galectin-3,LacNAc,2.1,"NAG (2-acetamido-2-deoxy-beta-D-glucopyranose), GAL (beta-D-galactopyranose)",6
+1CVN,ConA,trimannoside,,"MN, CA, MAN",4
+1LZB,Lysozyme,chitobiose,,NAG,3
+2PEL,PNA,galactose,,"CA, MN, GLC, GAL, BGC","2, 6"
+2UVO,WGA,GlcNAc,,"NDG, NAG, GOL","2, 6"
+5CNA,ConA,methyl alpha-D-mannopyranoside,,"MMA, MN, CA, CL","1, 2"

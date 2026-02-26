@@ -1,0 +1,8 @@
+# Muraki M et al. (1997) — Lysozyme-chitobiose mutant series
+# ΔΔG for removing aromatic stacking partner (Trp62→Ala)
+#
+# Prediction 3: ΔΔG_predicted = n_CH-pi_contacts × ε_CH-π
+# The ε_CH-π comes from synthetic hosts (Phase G3), not from this data.
+#
+mutant,dG_wt_kJ,dG_mutant_kJ,ddG_measured_kJ,n_CH_pi_lost,pdb_wt,pdb_mutant,notes
+Trp62Ala,,,,,1LZB,,"primary CH-π stacking residue"
