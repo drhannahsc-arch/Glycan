@@ -1,0 +1,8 @@
+source,assay,standard_type,value,units,notes
+ChEMBL5820,ELLA ConA-yeast mannan inhibition,IC50,19000,nM,"Glycoconjugate inhibitor, not monosaccharide Ka"
+ChEMBL5820,ELLA ConA-yeast mannan inhibition,IC50,29000,nM,"Glycoconjugate inhibitor, not monosaccharide Ka"
+ChEMBL5820,ELLA ConA-yeast mannan inhibition,IC50,234000,nM,Flagged outside typical range
+ChEMBL5820,ELLA ConA-yeast mannan inhibition,IC50,479000,nM,Flagged outside typical range
+ChEMBL5820,ELLA ConA-yeast mannan inhibition,IC50,615000,nM,Flagged outside typical range
+LITERATURE,Dam & Brewer 2002 Chem Rev 102:387,Ka,,M^-1,ConA-MeαMan Ka = 8.2×10³ M⁻¹ (25°C) — EXTRACT FROM PAPER
+LITERATURE,Chervenak & Toone 1995 Biochemistry 34:5685,Ka,,M^-1,ConA deoxy-sugar ITC series — PREDICTION 1 ANSWER KEY — EXTRACT FROM PAPER
