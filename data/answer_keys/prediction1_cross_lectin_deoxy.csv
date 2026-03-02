@@ -1,0 +1,17 @@
+derivative,C_position,substituent,Kb_conA_M-1,dH_conA_kJ_mol,Kb_pea_M-1,dH_pea_kJ_mol,Kb_lentil_M-1,dH_lentil_kJ_mol,source
+Glu (reference),-,OH,244,-16.6,137,-14.5,230,-9.7,Schwarz1996_BiochemJ_316_123
+MeαGlu,C1,OMe,1220,-18.8,137,-14.5,230,-9.7,Schwarz1996_BiochemJ_316_123
+Man (C2-ax),C2,ax-OH,920,-21.1,220,-25.2,270,-13.5,Schwarz1996_BiochemJ_316_123
+MeαMan,C1+C2,OMe+ax,5100,-28.4,480,-26.2,600,-16.6,Schwarz1996_BiochemJ_316_123
+αPhOGlu,C1,OPh,5630,-15.6,884,-11.2,338,-11.6,Schwarz1996_BiochemJ_316_123
+1HGlu (1-deoxy),C1,H,346,-17.7,123,-17.7,68,-14.9,Schwarz1996_BiochemJ_316_123
+1FGlu (1-fluoro),C1,F,147,-31.5,136,-18.1,74,-25.6,Schwarz1996_BiochemJ_316_123
+2HGlu (2-deoxy),C2,H,452,-20.8,174,-21.8,90,-17.0,Schwarz1996_BiochemJ_316_123
+2FGlu (2-fluoro),C2,F,461,-26.4,440,-15.9,206,-16.8,Schwarz1996_BiochemJ_316_123
+3FGlu (3-fluoro),C3,F,205,-17.0,128,-13.8,48,-14.8,Schwarz1996_BiochemJ_316_123
+3MeOGlu,C3,OMe,NB,NB,2800,-13.9,1910,-13.5,Schwarz1996_BiochemJ_316_123
+3HGlu (3-deoxy),C3,H,NB,NB,NB,NB,NB,NB,Schwarz1996_BiochemJ_316_123
+4HGlu (4-deoxy),C4,H,NB,NB,NB,NB,NB,NB,Schwarz1996_BiochemJ_316_123
+4FGlu (4-fluoro),C4,F,NB,NB,NB,NB,NB,NB,Schwarz1996_BiochemJ_316_123
+6HGlu (6-deoxy),C6,H,NB,NB,NB,NB,NB,NB,Schwarz1996_BiochemJ_316_123
+6FGlu (6-fluoro),C6,F,NB,NB,NB,NB,NB,NB,Schwarz1996_BiochemJ_316_123

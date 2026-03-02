@@ -32,9 +32,14 @@
 - [x] Prediction 6: Selectivity matrix — 86 glycans × 6 lectins with IUPAC names (LfDB Ka)
 
 ### Paper retrieval (STILL NEEDED — no database substitute)
-- [ ] Schwarz 1996 (Thermochim. Acta 284:129) — deoxy-sugar ΔH_sol values
+- [x] Schwarz 1996 (Biochem. J. 316:123) — ConA/pea/lentil deoxy binding Kb + ΔH
+  - 16 derivatives × 3 lectins: Kb, ΔG, ΔH, TΔS at 10°C and 25°C
+  - Critical: C3, C4, C6 deoxy = NO BINDING (defines pharmacophore)
+  - ΔΔH values extracted for parameter fitting (Table 4)
+  - NOTE: This is the BINDING paper. Dissolution paper (J. Solution Chem.) still needed
 - [ ] Jasra 1982 (J. Solution Chem. 11:325) — polyol ΔH_sol
-- [ ] Chervenak 1995 (Biochemistry 34:5685) — **Prediction 1 answer key** (ConA deoxy ITC)
+- [x] Schwarz 1996 (Biochem. J. 316:123) — **Prediction 1 answer key** (ConA deoxy Kb+ΔH)
+  - [ ] Chervenak 1995 (Biochemistry 34:5685) — ConA oligosaccharide ITC (still useful, lower priority)
 - [ ] Kumagai 1993 (Eur J Biochem 212:151) — **Prediction 3 answer key** (lysozyme mutants)
 - [ ] Dam & Brewer 2002 (Chem. Rev. 102:387) — ConA monosaccharide Ka + Prediction 5
 - [ ] Davis 2012 (Nature Chem. 4:548) — **Prediction 7 answer key** (synthetic receptor)

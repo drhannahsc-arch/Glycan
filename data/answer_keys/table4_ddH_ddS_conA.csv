@@ -1,0 +1,9 @@
+derivative,ddH_kJ_mol,ddS_J_mol_K,interpretation,source
+MeαGlu,2.2,0,enthalpy-driven,Schwarz1996_Table4
+αPhOGlu,0,-25,entropy-driven (hydrophobic),Schwarz1996_Table4
+1HGlu,0,10,entropy-driven (hydrophobic),Schwarz1996_Table4
+1FGlu,14.9,71,enthalpy+entropy (solvent weakening),Schwarz1996_Table4
+2HGlu,4.2,21,enthalpy+entropy (solvent weakening),Schwarz1996_Table4
+2FGlu,9.8,40,enthalpy+entropy (solvent weakening),Schwarz1996_Table4
+Man,4.5,14,enthalpy+entropy (solvent weakening),Schwarz1996_Table4
+3FGlu,0,14,entropy-driven (hydrophobic),Schwarz1996_Table4
