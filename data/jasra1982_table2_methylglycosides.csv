@@ -1,0 +1,10 @@
+compound,dHs_25C_kJ_mol,err_25C,dHs_35C_kJ_mol,err_35C,dCp_30C_J_K_mol,dCp_err,Cp2star_30C,Cp2bar,V2bar_25C_cm3_mol
+1-O-Methyl-a-D-Glucopyranoside,3.67,0.07,5.67,0.03,200,10,238,438,133.29
+1-O-Methyl-b-D-Glucopyranoside,9.18,0.09,11.12,0.06,194,11,238,432,132.09
+3-O-Methyl-a-D-Glucopyranoside,8.27,0.07,10.19,0.05,192,8,238,430,133.98
+1-O-Methyl-a-D-Galactopyranoside,-1.07,0.04,0.91,0.01,198,5,238,436,
+1-O-Methyl-b-D-Galactopyranoside,2.64,0.05,4.64,0.05,198,7,238,436,131.37
+1-O-Methyl-a-D-Xylopyranoside,1.82,0.05,3.5,0.04,168,7,201,369,116.36
+1-O-Methyl-a-D-Mannopyranoside,9.09,0.07,11.16,0.06,207,9,238,445,132.87
+1-O-Methyl-b-D-Xylopyranoside,5.91,0.03,6.89,0.03,170,4,201,371,117.39
+1-O-Methyl-b-D-Arabinopyranoside,9.58,0.06,11.27,0.06,169,8,201,370,

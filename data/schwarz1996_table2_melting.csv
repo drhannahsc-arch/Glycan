@@ -1,0 +1,14 @@
+compound,abbreviation,melting_temp_C,Tm_err,dfH_kJ_mol,dfH_err,est_dsH_at_Tm_kJ_mol,est_dsH_err,ratio_dsH_dfH,ratio_err
+D-mannopyranose,Man,118.0,1.0,24.7,0.7,19.6,1.2,0.80,0.05
+1-methoxy-a-D-mannopyranoside,aMeOMan,182.0,1.0,44.7,1.0,56.3,0.9,1.26,0.03
+a-D-glucopyranose,aGlu,150.0,0.5,34.3,0.3,30.7,3.4,0.90,0.10
+1-methoxy-a-D-glucopyranoside,aMeOGlu,151.0,1.0,37.6,0.6,32.1,1.2,0.85,0.04
+1-phenoxy-a-D-glucopyranoside,aPhOGlu,156.0,0.5,39.0,1.0,53.5,5.0,1.37,0.14
+1-deoxy-D-glucopyranose,1HGlu,130.0,0.5,27.4,0.2,20.0,0.5,0.73,0.02
+2-deoxy-D-glucopyranose,2HGlu,125.5,1.0,34.5,0.9,18.9,1.1,0.55,0.04
+2-deoxy-2-fluoro-D-glucopyranose,2FGlu,154.0,0.5,38.2,0.1,27.1,0.6,0.71,0.02
+3-deoxy-D-glucopyranose,3HGlu,114.0,0.5,32.6,0.2,28.7,2.3,0.88,0.07
+3-deoxy-3-fluoro-D-glucopyranose,3FGlu,105.0,0.1,18.3,0.6,18.1,0.8,0.99,0.06
+3-methoxy-a-D-glucopyranoside,3MeOGlu,152.0,0.5,41.3,1.8,31.0,0.7,0.75,0.03
+6-deoxy-D-glucopyranose,6HGlu,136.0,0.5,22.7,0.5,13.7,0.5,0.59,0.02
+6-deoxy-6-fluoro-D-glucopyranose,6FGlu,139.0,0.2,27.2,0.2,28.5,2.4,1.08,0.11

@@ -1,0 +1,5 @@
+position,ddH_deoxy,ddH_fluoro,donor_contribution_kJ_mol,notes
+C1,2.19,0.4,1.79,donor contribution at anomeric position
+C2,0.5,-4.2,4.7,large donor contribution at C2
+C3,-2.7,0.5,-3.2,anomalous - see discussion
+C6,10.02,1.64,8.38,very large donor contribution at primary OH

@@ -1,0 +1,10 @@
+series,position,parent,parent_dHsol_25C,parent_err,derivative,deriv_dHsol_25C,deriv_err,ddH_kJ_mol,ddH_err_propagated,stereochem,notes
+deoxy,C1-OH,aGlu,11.0,0.2,1HGlu,8.81,0.17,2.19,0.26,equatorial,anomeric position
+deoxy,C2-OH,aGlu,11.0,0.2,2HGlu,10.5,0.1,0.5,0.22,equatorial,
+deoxy,C3-OH,aGlu,11.0,0.2,3HGlu,13.7,0.1,-2.7,0.22,equatorial,negative=deoxy more endothermic
+deoxy,C6-OH,aGlu,11.0,0.2,6HGlu,0.98,0.1,10.02,0.22,primary OH,large effect-C6 dominates hydration
+fluoro,C1-F,aGlu,11.0,0.2,1FGlu,10.6,0.6,0.4,0.63,equatorial,F still accepts H-bonds
+fluoro,C2-F,aGlu,11.0,0.2,2FGlu,15.2,0.2,-4.2,0.28,equatorial,negative=fluoro more endothermic
+fluoro,C3-F,aGlu,11.0,0.2,3FGlu,10.5,0.1,0.5,0.22,equatorial,
+fluoro,C4-F,aGlu,11.0,0.2,4FGlu,12.6,0.5,-1.6,0.54,equatorial,only fluoro available at C4
+fluoro,C6-F,aGlu,11.0,0.2,6FGlu,9.36,0.2,1.64,0.28,primary,much smaller than deoxy C6

@@ -1,0 +1,16 @@
+compound,abbreviation,dHsol_15.1C_kJ_mol,err_15.1,dHsol_25.0C_kJ_mol,err_25.0,dHsol_25.0C_water_kJ_mol,err_25.0w,dHsol_35.0C_kJ_mol,err_35.0,dHsol_45.1C_kJ_mol,err_45.1,dsCp_kJ_mol_K,dsCp_err
+D-mannopyranose,Man,5.92,0.28,8.02,0.09,8.08,0.48,8.83,0.42,9.88,0.93,0.134,0.011
+1-methoxy-a-D-mannopyranoside,aMeOMan,,,10.5,0.1,10.0,0.2,11.7,0.4,16.2,0.8,0.293,0.010
+a-D-glucopyranose,aGlu,8.95,0.37,11.0,0.2,11.0,0.2,12.2,0.5,13.9,0.8,0.160,0.011
+1-methoxy-a-D-glucopyranoside,aMeOGlu,2.16,0.10,4.55,0.22,4.32,0.11,6.39,0.38,8.88,0.64,0.219,0.009
+1-phenoxy-a-D-glucopyranoside,aPhOGlu,8.53,0.25,13.0,0.4,,,14.0,1.1,18.7,1.4,0.314,0.050
+1-deoxy-D-glucopyranose,1HGlu,7.24,0.39,8.81,0.17,,,9.37,0.24,10.6,0.4,0.111,0.004
+1-deoxy-1-fluoro-D-glucopyranose,1FGlu,9.36,0.13,10.6,0.6,,,10.3,0.2,11.9,0.3,0.082,0.015
+2-deoxy-D-glucopyranose,2HGlu,9.87,0.17,10.5,0.1,10.3,0.1,10.2,0.5,12.3,0.3,0.082,0.006
+2-deoxy-2-fluoro-D-glucopyranose,2FGlu,14.2,0.2,15.2,0.2,14.4,0.4,14.9,0.7,17.0,0.6,0.093,0.003
+3-deoxy-D-glucopyranose,3HGlu,9.84,0.20,13.7,0.1,,,12.9,0.2,15.7,0.3,0.189,0.030
+3-deoxy-3-fluoro-D-glucopyranose,3FGlu,7.97,0.22,10.5,0.1,10.4,0.2,9.97,0.24,11.4,0.3,0.112,0.010
+3-methoxy-a-D-glucopyranoside,3MeOGlu,5.17,0.26,8.16,0.10,,,8.97,0.71,10.8,0.7,0.189,0.002
+4-deoxy-4-fluoro-a-D-glucopyranoside,4FGlu,12.9,0.1,12.6,0.5,,,14.5,0.4,16.5,1.0,0.189,0.002
+6-deoxy-D-glucopyranose,6HGlu,0.00,0.12,0.98,0.10,,,1.40,0.17,2.96,0.42,0.099,0.001
+6-deoxy-6-fluoro-D-glucopyranose,6FGlu,8.45,0.12,9.36,0.20,,,8.97,0.33,13.2,0.9,0.163,0.024
