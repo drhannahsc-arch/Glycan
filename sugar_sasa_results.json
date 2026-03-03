@@ -1,0 +1,605 @@
+{
+  "method": "FreeSASA Lee-Richards, probe=1.4\u00c5, RDKit ETKDG+MMFF94",
+  "gamma_polar_range": [
+    0.05,
+    0.075,
+    0.1
+  ],
+  "gamma_polar_unit": "kJ/(mol\u00b7\u00c5\u00b2)",
+  "sugars": {
+    "alpha-D-glucopyranose": {
+      "name": "alpha-D-glucopyranose",
+      "abbrev": "\u03b1Glu",
+      "smiles": "OC[C@@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 82.06,
+      "total_sasa": 334.99,
+      "polar_sasa": 223.49,
+      "nonpolar_sasa": 111.5,
+      "n_hydroxyls": 5,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 34.75,
+          "h_sasa": 8.6,
+          "oh_sasa": 43.35
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 23.66,
+          "h_sasa": 25.38,
+          "oh_sasa": 49.04
+        },
+        {
+          "o_idx": 7,
+          "c_idx": 6,
+          "ring_member": true,
+          "o_sasa": 22.7,
+          "h_sasa": 19.18,
+          "oh_sasa": 41.88
+        },
+        {
+          "o_idx": 9,
+          "c_idx": 8,
+          "ring_member": true,
+          "o_sasa": 22.46,
+          "h_sasa": 18.56,
+          "oh_sasa": 41.02
+        },
+        {
+          "o_idx": 11,
+          "c_idx": 10,
+          "ring_member": true,
+          "o_sasa": 16.49,
+          "h_sasa": 18.28,
+          "oh_sasa": 34.77
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "alpha-D-mannopyranose": {
+      "name": "alpha-D-mannopyranose",
+      "abbrev": "\u03b1Man",
+      "smiles": "OC[C@@H]1OC(O)[C@@H](O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 80.68,
+      "total_sasa": 336.63,
+      "polar_sasa": 208.09,
+      "nonpolar_sasa": 128.55,
+      "n_hydroxyls": 5,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 23.88,
+          "h_sasa": 17.21,
+          "oh_sasa": 41.09
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 23.64,
+          "h_sasa": 25.66,
+          "oh_sasa": 49.3
+        },
+        {
+          "o_idx": 7,
+          "c_idx": 6,
+          "ring_member": true,
+          "o_sasa": 22.61,
+          "h_sasa": 19.18,
+          "oh_sasa": 41.79
+        },
+        {
+          "o_idx": 9,
+          "c_idx": 8,
+          "ring_member": true,
+          "o_sasa": 22.47,
+          "h_sasa": 16.98,
+          "oh_sasa": 39.45
+        },
+        {
+          "o_idx": 11,
+          "c_idx": 10,
+          "ring_member": true,
+          "o_sasa": 22.55,
+          "h_sasa": 8.93,
+          "oh_sasa": 31.48
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "axial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "alpha-D-galactopyranose": {
+      "name": "alpha-D-galactopyranose",
+      "abbrev": "\u03b1Gal",
+      "smiles": "OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 78.58,
+      "total_sasa": 344.4,
+      "polar_sasa": 229.68,
+      "nonpolar_sasa": 114.72,
+      "n_hydroxyls": 5,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 34.72,
+          "h_sasa": 16.98,
+          "oh_sasa": 51.7
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 23.4,
+          "h_sasa": 24.98,
+          "oh_sasa": 48.38
+        },
+        {
+          "o_idx": 7,
+          "c_idx": 6,
+          "ring_member": true,
+          "o_sasa": 22.78,
+          "h_sasa": 19.11,
+          "oh_sasa": 41.89
+        },
+        {
+          "o_idx": 9,
+          "c_idx": 8,
+          "ring_member": true,
+          "o_sasa": 22.57,
+          "h_sasa": 18.55,
+          "oh_sasa": 41.13
+        },
+        {
+          "o_idx": 11,
+          "c_idx": 10,
+          "ring_member": true,
+          "o_sasa": 23.16,
+          "h_sasa": 18.28,
+          "oh_sasa": 41.44
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "axial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "1-deoxy-D-glucopyranose": {
+      "name": "1-deoxy-D-glucopyranose",
+      "abbrev": "1HGlu",
+      "smiles": "OC[C@@H]1OCC(O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 94.37,
+      "total_sasa": 323.84,
+      "polar_sasa": 167.19,
+      "nonpolar_sasa": 156.65,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 24.01,
+          "h_sasa": 17.08,
+          "oh_sasa": 41.09
+        },
+        {
+          "o_idx": 6,
+          "c_idx": 5,
+          "ring_member": true,
+          "o_sasa": 21.21,
+          "h_sasa": 24.32,
+          "oh_sasa": 45.53
+        },
+        {
+          "o_idx": 8,
+          "c_idx": 7,
+          "ring_member": true,
+          "o_sasa": 22.93,
+          "h_sasa": 16.32,
+          "oh_sasa": 39.25
+        },
+        {
+          "o_idx": 10,
+          "c_idx": 9,
+          "ring_member": true,
+          "o_sasa": 22.76,
+          "h_sasa": 8.8,
+          "oh_sasa": 31.55
+        }
+      ],
+      "oh_positions": {
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "2-deoxy-D-glucopyranose": {
+      "name": "2-deoxy-D-glucopyranose",
+      "abbrev": "2HGlu",
+      "smiles": "OC[C@@H]1OC(O)C[C@@H](O)[C@@H]1O",
+      "energy_kcal": 30.09,
+      "total_sasa": 326.58,
+      "polar_sasa": 175.74,
+      "nonpolar_sasa": 150.84,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 23.84,
+          "h_sasa": 17.0,
+          "oh_sasa": 40.84
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 32.89,
+          "h_sasa": 20.49,
+          "oh_sasa": 53.38
+        },
+        {
+          "o_idx": 8,
+          "c_idx": 7,
+          "ring_member": true,
+          "o_sasa": 20.27,
+          "h_sasa": 23.94,
+          "oh_sasa": 44.2
+        },
+        {
+          "o_idx": 10,
+          "c_idx": 9,
+          "ring_member": true,
+          "o_sasa": 22.89,
+          "h_sasa": 8.63,
+          "oh_sasa": 31.52
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "3-deoxy-D-glucopyranose": {
+      "name": "3-deoxy-D-glucopyranose",
+      "abbrev": "3HGlu",
+      "smiles": "OC[C@@H]1OC(O)[C@H](O)C[C@@H]1O",
+      "energy_kcal": 49.77,
+      "total_sasa": 319.58,
+      "polar_sasa": 152.79,
+      "nonpolar_sasa": 166.79,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 23.59,
+          "h_sasa": 17.23,
+          "oh_sasa": 40.82
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 33.69,
+          "h_sasa": 15.36,
+          "oh_sasa": 49.06
+        },
+        {
+          "o_idx": 7,
+          "c_idx": 6,
+          "ring_member": true,
+          "o_sasa": 23.73,
+          "h_sasa": 7.24,
+          "oh_sasa": 30.97
+        },
+        {
+          "o_idx": 10,
+          "c_idx": 9,
+          "ring_member": true,
+          "o_sasa": 16.57,
+          "h_sasa": 9.16,
+          "oh_sasa": 25.73
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    },
+    "6-deoxy-D-glucopyranose": {
+      "name": "6-deoxy-D-glucopyranose",
+      "abbrev": "6HGlu",
+      "smiles": "C[C@@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 66.88,
+      "total_sasa": 326.24,
+      "polar_sasa": 186.6,
+      "nonpolar_sasa": 139.64,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 4,
+          "c_idx": 3,
+          "ring_member": true,
+          "o_sasa": 23.76,
+          "h_sasa": 25.23,
+          "oh_sasa": 48.99
+        },
+        {
+          "o_idx": 6,
+          "c_idx": 5,
+          "ring_member": true,
+          "o_sasa": 22.76,
+          "h_sasa": 19.05,
+          "oh_sasa": 41.81
+        },
+        {
+          "o_idx": 8,
+          "c_idx": 7,
+          "ring_member": true,
+          "o_sasa": 22.57,
+          "h_sasa": 18.45,
+          "oh_sasa": 41.01
+        },
+        {
+          "o_idx": 10,
+          "c_idx": 9,
+          "ring_member": true,
+          "o_sasa": 23.38,
+          "h_sasa": 18.18,
+          "oh_sasa": 41.56
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        }
+      }
+    },
+    "L-fucopyranose": {
+      "name": "L-fucopyranose",
+      "abbrev": "Fuc",
+      "smiles": "C[C@H]1OC(O)[C@@H](O)[C@H](O)[C@@H]1O",
+      "energy_kcal": 67.93,
+      "total_sasa": 325.72,
+      "polar_sasa": 184.02,
+      "nonpolar_sasa": 141.7,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 4,
+          "c_idx": 3,
+          "ring_member": true,
+          "o_sasa": 24.19,
+          "h_sasa": 24.74,
+          "oh_sasa": 48.93
+        },
+        {
+          "o_idx": 6,
+          "c_idx": 5,
+          "ring_member": true,
+          "o_sasa": 22.72,
+          "h_sasa": 18.94,
+          "oh_sasa": 41.66
+        },
+        {
+          "o_idx": 8,
+          "c_idx": 7,
+          "ring_member": true,
+          "o_sasa": 22.84,
+          "h_sasa": 18.24,
+          "oh_sasa": 41.08
+        },
+        {
+          "o_idx": 10,
+          "c_idx": 9,
+          "ring_member": true,
+          "o_sasa": 24.7,
+          "h_sasa": 15.92,
+          "oh_sasa": 40.62
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C2": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        }
+      }
+    },
+    "N-acetyl-D-glucosamine": {
+      "name": "N-acetyl-D-glucosamine",
+      "abbrev": "GlcNAc",
+      "smiles": "OC[C@@H]1OC(O)[C@H](NC(C)=O)[C@@H](O)[C@@H]1O",
+      "energy_kcal": 49.13,
+      "total_sasa": 395.4,
+      "polar_sasa": 194.27,
+      "nonpolar_sasa": 201.13,
+      "n_hydroxyls": 4,
+      "hydroxyls": [
+        {
+          "o_idx": 0,
+          "c_idx": 1,
+          "ring_member": false,
+          "o_sasa": 24.13,
+          "h_sasa": 21.98,
+          "oh_sasa": 46.11
+        },
+        {
+          "o_idx": 5,
+          "c_idx": 4,
+          "ring_member": true,
+          "o_sasa": 14.31,
+          "h_sasa": 13.26,
+          "oh_sasa": 27.57
+        },
+        {
+          "o_idx": 12,
+          "c_idx": 11,
+          "ring_member": true,
+          "o_sasa": 21.58,
+          "h_sasa": 3.52,
+          "oh_sasa": 25.09
+        },
+        {
+          "o_idx": 14,
+          "c_idx": 13,
+          "ring_member": true,
+          "o_sasa": 23.51,
+          "h_sasa": 17.46,
+          "oh_sasa": 40.97
+        }
+      ],
+      "oh_positions": {
+        "C1": {
+          "stereo": "axial_alpha",
+          "type": "anomeric"
+        },
+        "C3": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C4": {
+          "stereo": "equatorial",
+          "type": "secondary"
+        },
+        "C6": {
+          "stereo": "primary",
+          "type": "primary"
+        }
+      }
+    }
+  }
+}
