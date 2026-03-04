@@ -1,0 +1,10 @@
+name,n_HB,n_CHP,dG_pred,dG_obs,resid,Ka_pred,Ka_obs,conf,source
+ConA + αMeMan,3,2,4.25,-22.20,26.45,0.18,7600,HIGH,"Derewenda 1989 [LIT], Chervenak 1995"
+ConA + αMeGlu,3,1,6.75,-19.30,26.05,0.07,2400,HIGH,Chervenak 1995
+WGA + GlcNAc,4,1,-0.60,-15.50,14.90,1.27,410,MEDIUM,"Bains 1992, Wright 1984 [LIT]"
+Gal3 + Gal unit (from lactose),5,3,1.15,-22.60,23.75,0.63,9091,HIGH,Diehl 2024
+Davis hexaurea + β-D-Glu,10,2,-4.30,-24.40,20.10,5.67,18600,HIGH,"Tromans 2019, Nat. Chem. 11:52"
+Davis hexaurea + β-D-Gal,7,1,8.85,-12.90,21.75,0.03,180,MEDIUM,Tromans 2019
+Davis hexaurea + β-D-Man,7,1,8.85,-12.40,21.25,0.03,140,MEDIUM,Tromans 2019
+Davis hexaurea + 2-deoxy-D-Glu,6,2,2.30,-16.70,19.00,0.40,725,HIGH,Tromans 2019
+Davis hexaurea + GlcNAc,6,0,15.80,-7.40,23.20,0.00,20,LOW,Tromans 2019

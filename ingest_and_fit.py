@@ -1,342 +1,192 @@
+#!/usr/bin/env python3
 """
-ingest_and_fit.py — Data ingestion + parameter determination pipeline.
-
-Students run this after retrieving paper tables. It:
-  1. Reads filled CSV templates from data/
-  2. Validates data format and completeness
-  3. Runs Phase G1-G3 parameter determination
-  4. Saves locked parameters to glycan_params.yaml
-  5. Re-runs predictions and reports statistics
-
-Usage:
-  python ingest_and_fit.py              # full pipeline
-  python ingest_and_fit.py --validate   # validate data only, don't fit
-  python ingest_and_fit.py --diagnose   # show per-OH diagnostics
+MABE Glycan Module — ingest_and_fit.py
+Phase 1+2: Score all systems with locked v2.2 parameters.
+No fitting to biological data. All parameters from pure chemistry sources.
+Outputs: predictions table, residuals, R², sanity checks.
 """
 
-import sys
-import os
+import math
 import csv
-import json
-import numpy as np
-from typing import Dict, List, Optional, Tuple
+import sys
+from parameters_v22 import score, EPS_HB, EPS_CH_PI, K_DESOLV_EQ, K_DESOLV_AX, K_DESOLV_C6, K_DESOLV_NAC, BETA_CONTEXT
+from contact_maps_v1 import ALL_SYSTEMS
 
-from glycan_scorer import GlycanParams
-from parameter_fitting import (
-    fit_desolvation_from_schwarz,
-    fit_NAc_desolvation,
-    fit_conformational_entropy,
-    fit_ch_pi_from_synthetic_hosts,
-    assemble_params,
-)
+RT = 2.479  # kJ/mol at 298 K (8.314e-3 × 298)
 
+def Ka_from_dG(dG_kJ):
+    """Convert ΔG (kJ/mol) to Ka (M⁻¹)."""
+    return math.exp(-dG_kJ / RT)
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+def dG_from_Ka(Ka):
+    """Convert Ka (M⁻¹) to ΔG (kJ/mol)."""
+    return -RT * math.log(Ka)
 
+# ============================================================
+# PHASE 1: SANITY CHECKS ON PARAMETERS
+# ============================================================
+print("=" * 60)
+print("PHASE 1: PARAMETER SANITY CHECKS")
+print("=" * 60)
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Data readers
-# ═══════════════════════════════════════════════════════════════════════════
+gates = []
 
-def read_schwarz_csv(filepath: str) -> Dict[str, float]:
-    """Read dissolution calorimetry data from schwarz_dissolution.csv.
+# Gate G1: k_desolv_eq in expected range
+assert 1.5 <= K_DESOLV_EQ <= 5.0, f"k_desolv_eq={K_DESOLV_EQ} out of range [1.5, 5.0]"
+print(f"[PASS] k_desolv_eq = {K_DESOLV_EQ:.1f} kJ/mol  (range 1.5–5.0)")
 
-    Returns dict: compound_name → ΔH_sol (kJ/mol) at 25°C.
-    Skips rows with empty dH_sol_kJ_mol.
-    """
-    data = {}
-    with open(filepath, 'r') as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            parts = line.split(',')
-            if parts[0] == 'compound':  # header
-                continue
-            compound = parts[0].strip()
-            dH_str = parts[1].strip()
-            if dH_str:
-                try:
-                    data[compound] = float(dH_str)
-                except ValueError:
-                    print(f"  WARNING: Cannot parse dH_sol for '{compound}': '{dH_str}'")
-    return data
+# Gate G2: k_desolv_ax > k_desolv_eq (axial more costly)
+assert K_DESOLV_AX > K_DESOLV_EQ, "k_desolv_ax must exceed k_desolv_eq"
+print(f"[PASS] k_desolv_ax = {K_DESOLV_AX:.1f} > k_desolv_eq = {K_DESOLV_EQ:.1f}")
 
+# Gate G3: eps_CH_pi in expected range
+assert -4.0 <= EPS_CH_PI <= -1.0, f"eps_CH_pi={EPS_CH_PI} out of range [-4.0, -1.0]"
+print(f"[PASS] eps_CH_pi   = {EPS_CH_PI:.1f} kJ/mol  (range -4.0 to -1.0)")
 
-def read_jasra_csv(filepath: str) -> Dict[str, float]:
-    """Read polyol dissolution data from jasra_polyols.csv.
+# Gate G4: eps_HB in expected range
+assert -8.0 <= EPS_HB <= -3.0, f"eps_HB={EPS_HB} out of range"
+print(f"[PASS] eps_HB      = {EPS_HB:.1f} kJ/mol  (range -8.0 to -3.0)")
 
-    Same format as Schwarz. Returns compound → ΔH_sol (kJ/mol).
-    """
-    return read_schwarz_csv(filepath)  # same CSV format
+# Gate G5: effective HB after beta_context
+eff_HB = EPS_HB * BETA_CONTEXT
+print(f"[INFO] Effective HB energy (×β_context): {eff_HB:.2f} kJ/mol")
+assert -4.0 <= eff_HB <= -1.0, f"Effective HB {eff_HB} out of expected range"
+print(f"[PASS] Effective HB in range [-4.0, -1.0]")
 
+print()
 
-def read_laughrey_csv(filepath: str) -> List[Dict]:
-    """Read CH-π host-guest data from laughrey_ch_pi.csv.
+# ============================================================
+# PHASE 2: PREDICTIONS
+# ============================================================
+print("=" * 60)
+print("PHASE 2: PREDICTIONS vs OBSERVED")
+print("=" * 60)
+print(f"{'System':<38} {'ΔG_pred':>8} {'ΔG_obs':>8} {'Resid':>7} {'Ka_pred':>10} {'Ka_obs':>10} {'Conf'}")
+print("-" * 95)
 
-    Returns list of dicts for fit_ch_pi_from_synthetic_hosts().
-    """
-    entries = []
-    with open(filepath, 'r') as f:
-        reader = csv.DictReader(
-            (row for row in f if not row.startswith('#')),
-        )
-        for row in reader:
-            try:
-                entry = {
-                    "host": row.get("host", "").strip(),
-                    "guest": row.get("guest", "").strip(),
-                    "dG_measured": float(row["dG_kJ_mol"]),
-                    "dG_other_terms": float(row.get("dG_other_kJ_mol", 0)),
-                    "n_CH_pi_contacts": int(row.get("n_ch_pi", 0)),
-                }
-                if entry["n_CH_pi_contacts"] > 0:
-                    entries.append(entry)
-            except (ValueError, KeyError):
-                continue
-    return entries
+results = []
+for sys in ALL_SYSTEMS:
+    dG_pred = score(sys["n_HB"], sys["n_CHP"], sys["buried_ohs"])
+    dG_obs  = sys["dG_obs"]
+    Ka_pred = Ka_from_dG(dG_pred)
+    Ka_obs  = sys["Ka_obs"]
+    resid   = dG_pred - dG_obs
 
+    results.append({
+        "name":     sys["name"],
+        "dG_pred":  dG_pred,
+        "dG_obs":   dG_obs,
+        "resid":    resid,
+        "Ka_pred":  Ka_pred,
+        "Ka_obs":   Ka_obs,
+        "conf":     sys["confidence"],
+        "n_HB":     sys["n_HB"],
+        "n_CHP":    sys["n_CHP"],
+        "source":   sys["source"],
+    })
+    print(f"{sys['name']:<38} {dG_pred:>8.1f} {dG_obs:>8.1f} {resid:>+7.1f} {Ka_pred:>10.0f} {Ka_obs:>10} {sys['confidence']}")
 
-# ═══════════════════════════════════════════════════════════════════════════
-# Validation
-# ═══════════════════════════════════════════════════════════════════════════
+print()
 
-def validate_data():
-    """Check which data files have actual values (not empty templates)."""
-    print("=" * 60)
-    print("DATA VALIDATION")
-    print("=" * 60)
+# ============================================================
+# STATISTICS
+# ============================================================
+print("=" * 60)
+print("STATISTICS")
+print("=" * 60)
 
-    files_status = {}
+# Separate by confidence
+high_med = [r for r in results if r["conf"] in ("HIGH", "MEDIUM")]
+high_only = [r for r in results if r["conf"] == "HIGH"]
 
-    # Schwarz dissolution
-    schwarz_path = os.path.join(DATA_DIR, "schwarz_dissolution.csv")
-    if os.path.exists(schwarz_path):
-        data = read_schwarz_csv(schwarz_path)
-        n = len(data)
-        files_status["schwarz"] = n
-        status = "✓ READY" if n >= 4 else f"⚠ Only {n} values (need ≥4)"
-        if n == 0:
-            status = "✗ EMPTY TEMPLATE"
-        print(f"  schwarz_dissolution.csv: {n} compounds with ΔH_sol — {status}")
-    else:
-        files_status["schwarz"] = 0
-        print(f"  schwarz_dissolution.csv: MISSING")
-
-    # Jasra polyols
-    jasra_path = os.path.join(DATA_DIR, "jasra_polyols.csv")
-    if os.path.exists(jasra_path):
-        data = read_jasra_csv(jasra_path)
-        n = len(data)
-        files_status["jasra"] = n
-        status = "✓ READY" if n >= 2 else f"⚠ Only {n} values"
-        if n == 0:
-            status = "✗ EMPTY TEMPLATE"
-        print(f"  jasra_polyols.csv:       {n} compounds with ΔH_sol — {status}")
-    else:
-        files_status["jasra"] = 0
-        print(f"  jasra_polyols.csv:       MISSING")
-
-    # Laughrey CH-π
-    laughrey_path = os.path.join(DATA_DIR, "laughrey_ch_pi.csv")
-    if os.path.exists(laughrey_path):
-        data = read_laughrey_csv(laughrey_path)
-        n = len(data)
-        files_status["laughrey"] = n
-        status = "✓ READY" if n >= 2 else f"⚠ Only {n} entries"
-        if n == 0:
-            status = "✗ EMPTY TEMPLATE"
-        print(f"  laughrey_ch_pi.csv:      {n} host-guest entries — {status}")
-    else:
-        files_status["laughrey"] = 0
-        print(f"  laughrey_ch_pi.csv:      MISSING")
-
-    # Answer keys
-    ak_dir = os.path.join(DATA_DIR, "answer_keys")
-    if os.path.isdir(ak_dir):
-        for fname in sorted(os.listdir(ak_dir)):
-            if fname.endswith('.csv'):
-                fpath = os.path.join(ak_dir, fname)
-                n_total, n_filled = 0, 0
-                with open(fpath, 'r') as f:
-                    for line in f:
-                        line = line.strip()
-                        if not line or line.startswith('#') or 'VERIFIED' in line:
-                            continue
-                        parts = line.split(',')
-                        n_total += 1
-                        # Check if Ka or dG column has data
-                        if len(parts) > 1 and parts[1].strip():
-                            n_filled += 1
-                status = f"{n_filled}/{n_total} entries"
-                print(f"  answer_keys/{fname}: {status}")
-
-    # Summary
-    print("\n" + "-" * 60)
-    can_fit_G1 = files_status.get("schwarz", 0) >= 4
-    can_fit_G3 = files_status.get("laughrey", 0) >= 2
-    print(f"  Phase G1 (desolvation): {'READY' if can_fit_G1 else 'BLOCKED — need Schwarz table values'}")
-    print(f"  Phase G2 (conf entropy): BLOCKED — need GLYCAM06 QM profiles")
-    print(f"  Phase G3 (CH-π):         {'READY' if can_fit_G3 else 'BLOCKED — need Laughrey table values'}")
-
-    return files_status
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-# Fitting pipeline
-# ═══════════════════════════════════════════════════════════════════════════
-
-def run_fitting(diagnose: bool = False) -> Optional[GlycanParams]:
-    """Run Phase G1-G3 parameter determination from available data."""
-    print("\n" + "=" * 60)
-    print("PARAMETER FITTING")
-    print("=" * 60)
-
-    # --- Phase G1: Desolvation ---
-    print("\n--- Phase G1: Polyol desolvation ---")
-    schwarz_path = os.path.join(DATA_DIR, "schwarz_dissolution.csv")
-    schwarz_data = read_schwarz_csv(schwarz_path) if os.path.exists(schwarz_path) else {}
-
-    if len(schwarz_data) >= 4:
-        desolv_result = fit_desolvation_from_schwarz(schwarz_data)
-        print(f"  k_desolv_eq = {desolv_result['k_desolv_eq']:.2f} kJ/mol "
-              f"(from {desolv_result['n_eq_points']} equatorial points)")
-        print(f"  k_desolv_ax = {desolv_result['k_desolv_ax']:.2f} kJ/mol "
-              f"(from {desolv_result['n_ax_points']} axial points)")
-
-        if diagnose and desolv_result.get("per_position"):
-            print("\n  Per-position diagnostics:")
-            for pos, info in desolv_result["per_position"].items():
-                print(f"    {pos:10s}: ΔΔH = {info['ddH_kJ']:+.2f} kJ/mol ({info['stereo']})")
-
-        # NAc from Jasra
-        jasra_path = os.path.join(DATA_DIR, "jasra_polyols.csv")
-        jasra_data = read_jasra_csv(jasra_path) if os.path.exists(jasra_path) else {}
-        k_NAc = fit_NAc_desolvation(jasra_data)
-        desolv_result["k_desolv_NAc"] = k_NAc
-        print(f"  k_desolv_NAc = {k_NAc:.2f} kJ/mol")
-    else:
-        print(f"  SKIPPED — only {len(schwarz_data)} Schwarz values (need ≥4)")
-        print(f"  Using placeholder: k_desolv_eq=8.0, k_desolv_ax=5.0, k_desolv_NAc=6.0")
-        desolv_result = {"k_desolv_eq": 8.0, "k_desolv_ax": 5.0, "k_desolv_NAc": 6.0}
-
-    # --- Phase G2: Conformational entropy ---
-    print("\n--- Phase G2: Conformational entropy ---")
-    # QM torsion profiles not available via web — use literature consensus
-    print("  Using literature consensus: eps_conf ≈ 3.5 kJ/mol per φ/ψ pair")
-    print("  (Imberty 1999, Kirschner 2008 GLYCAM06)")
-    conf_result = {"eps_conf": 3.5}
-
-    # --- Phase G3: CH-π stacking ---
-    print("\n--- Phase G3: CH-π stacking ---")
-    laughrey_path = os.path.join(DATA_DIR, "laughrey_ch_pi.csv")
-    laughrey_data = read_laughrey_csv(laughrey_path) if os.path.exists(laughrey_path) else []
-
-    if len(laughrey_data) >= 2:
-        ch_pi_result = fit_ch_pi_from_synthetic_hosts(laughrey_data)
-        print(f"  eps_CH_pi = {ch_pi_result['eps_CH_pi']:.2f} kJ/mol per contact "
-              f"(from {ch_pi_result['n_entries']} entries)")
-        if ch_pi_result.get("range"):
-            print(f"  Range: {ch_pi_result['range'][0]:.2f} to {ch_pi_result['range'][1]:.2f}")
-    else:
-        print(f"  SKIPPED — only {len(laughrey_data)} Laughrey entries (need ≥2)")
-        print(f"  Using Nishio consensus: eps_CH_pi ≈ -2.5 kJ/mol")
-        ch_pi_result = {"eps_CH_pi": -2.5}
-
-    # --- Assemble ---
-    print("\n--- Assembling parameter set ---")
-    params = assemble_params(
-        desolv_result=desolv_result,
-        conf_result=conf_result,
-        ch_pi_result=ch_pi_result,
-        eps_HB=-6.0,
-        dG_0=12.0,  # placeholder; will be calibrated below
-    )
-    params.eps_water_bridge = -4.0  # kJ/mol per conserved water (literature estimate)
-
-    # Fit dG_0 from ConA MeαMan if answer key available
-    from contact_maps_predictions import PREDICTION_2_MAPS
-    from glycan_scorer import predict_dG
-    meas_man = -22.38  # kJ/mol (MeαMan, Chervenak/Dam consensus)
-    pred_man = predict_dG(params, PREDICTION_2_MAPS["MeαMan"]).dG_predicted
-    offset_correction = meas_man - (pred_man - params.dG_0)
-    params.dG_0 = round(offset_correction, 2)
-    print(f"  dG_0 calibrated to ConA:MeαMan = {params.dG_0:.2f} kJ/mol")
-
-    print(f"\n  FINAL PARAMETERS:")
-    print(f"    k_desolv_eq  = {params.k_desolv_eq:.2f} kJ/mol")
-    print(f"    k_desolv_ax  = {params.k_desolv_ax:.2f} kJ/mol")
-    print(f"    k_desolv_NAc = {params.k_desolv_NAc:.2f} kJ/mol")
-    print(f"    eps_CH_pi    = {params.eps_CH_pi:.2f} kJ/mol")
-    print(f"    eps_HB       = {params.eps_HB:.2f} kJ/mol")
-    print(f"    eps_conf     = {params.eps_conf:.2f} kJ/mol")
-    print(f"    eps_water    = {params.eps_water_bridge:.2f} kJ/mol")
-    print(f"    dG_0         = {params.dG_0:.2f} kJ/mol")
-
-    return params
-
-
-def save_params(params: GlycanParams, filepath: str = "glycan_params.yaml"):
-    """Save locked parameters to YAML."""
-    content = f"""# Glycan Scoring Parameters — LOCKED
-# Generated by ingest_and_fit.py
-# DO NOT EDIT manually after Phase G1-G3 lock.
-#
-k_desolv_eq: {params.k_desolv_eq}
-k_desolv_ax: {params.k_desolv_ax}
-k_desolv_NAc: {params.k_desolv_NAc}
-eps_CH_pi: {params.eps_CH_pi}
-eps_HB: {params.eps_HB}
-eps_conf: {params.eps_conf}
-eps_water_bridge: {params.eps_water_bridge}
-dG_0: {params.dG_0}
-"""
-    with open(filepath, 'w') as f:
-        f.write(content)
-    print(f"\n  Parameters saved to {filepath}")
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-# Main
-# ═══════════════════════════════════════════════════════════════════════════
-
-def main():
-    validate_only = "--validate" in sys.argv
-    diagnose = "--diagnose" in sys.argv
-
-    status = validate_data()
-
-    if validate_only:
+def stats(rset, label):
+    n = len(rset)
+    if n < 2:
+        print(f"{label}: n={n}, insufficient for R²")
         return
+    obs   = [r["dG_obs"]  for r in rset]
+    pred  = [r["dG_pred"] for r in rset]
+    resids = [r["resid"]  for r in rset]
 
-    params = run_fitting(diagnose=diagnose)
-    if params is None:
-        print("\nFitting failed. Check data files.")
-        return
+    mean_obs  = sum(obs) / n
+    ss_tot    = sum((o - mean_obs)**2 for o in obs)
+    ss_res    = sum(r**2 for r in resids)
+    r2        = 1 - ss_res / ss_tot if ss_tot > 0 else float('nan')
+    mae       = sum(abs(r) for r in resids) / n
+    rmse      = math.sqrt(ss_res / n)
 
-    save_params(params)
+    print(f"{label} (n={n}):")
+    print(f"  R²   = {r2:.3f}")
+    print(f"  MAE  = {mae:.2f} kJ/mol")
+    print(f"  RMSE = {rmse:.2f} kJ/mol")
+    return r2, mae, rmse
 
-    # Re-run predictions with fitted params
-    print("\n" + "=" * 60)
-    print("RE-RUNNING PREDICTIONS WITH FITTED PARAMETERS")
-    print("=" * 60)
-    from run_predictions import (
-        run_prediction_1, run_prediction_2, run_prediction_3,
-        run_prediction_4, run_prediction_6, generate_figures,
-    )
-    run_prediction_1(params)
-    run_prediction_2(params)
-    run_prediction_3(params)
-    run_prediction_4(params)
-    run_prediction_6(params)
+stats(high_only, "HIGH confidence only")
+print()
+stats(high_med,  "HIGH + MEDIUM confidence")
 
-    print("\n  Generating figures...")
-    generate_figures(params, output_dir="figures")
+print()
 
-    print("\n" + "=" * 60)
-    print("PIPELINE COMPLETE")
-    print("=" * 60)
+# ============================================================
+# SELECTIVITY RATIOS (key qualitative tests)
+# ============================================================
+print("=" * 60)
+print("SELECTIVITY RATIOS")
+print("=" * 60)
 
+def get(name):
+    for r in results:
+        if r["name"] == name:
+            return r
+    return None
 
-if __name__ == "__main__":
-    main()
+conA_man = get("ConA + αMeMan")
+conA_glu = get("ConA + αMeGlu")
+davis_glu = get("Davis hexaurea + β-D-Glu")
+davis_gal = get("Davis hexaurea + β-D-Gal")
+davis_man = get("Davis hexaurea + β-D-Man")
+davis_2dg = get("Davis hexaurea + 2-deoxy-D-Glu")
+
+print("ConA selectivity (should be Man > Glu):")
+if conA_man and conA_glu:
+    pred_ratio  = conA_man["Ka_pred"] / conA_glu["Ka_pred"]
+    obs_ratio   = conA_man["Ka_obs"]  / conA_glu["Ka_obs"]
+    print(f"  Predicted Man/Glu ratio: {pred_ratio:.1f}×  |  Observed: {obs_ratio:.1f}×")
+    print(f"  {'PASS ✓' if pred_ratio > 1.0 else 'FAIL ✗'} — Man predicted {'>' if pred_ratio > 1 else '<'} Glu")
+
+print()
+print("Davis selectivity (should be Glu >> Man ≈ Gal — OPPOSITE from ConA):")
+if davis_glu and davis_gal and davis_man:
+    pred_glu_gal = davis_glu["Ka_pred"] / davis_gal["Ka_pred"]
+    pred_glu_man = davis_glu["Ka_pred"] / davis_man["Ka_pred"]
+    obs_glu_gal  = davis_glu["Ka_obs"]  / davis_gal["Ka_obs"]
+    obs_glu_man  = davis_glu["Ka_obs"]  / davis_man["Ka_obs"]
+    print(f"  Predicted Glu/Gal: {pred_glu_gal:.0f}×  |  Observed: {obs_glu_gal:.0f}×")
+    print(f"  Predicted Glu/Man: {pred_glu_man:.0f}×  |  Observed: {obs_glu_man:.0f}×")
+    scaffold_pass = pred_glu_gal > 1.0 and pred_glu_man > 1.0
+    print(f"  {'PASS ✓' if scaffold_pass else 'FAIL ✗'} — scaffold-independence test")
+
+print()
+print("Davis 2dGlu vs Glu (C2-OH contribution):")
+if davis_glu and davis_2dg:
+    pred_ratio = davis_glu["Ka_pred"] / davis_2dg["Ka_pred"]
+    obs_ratio  = davis_glu["Ka_obs"]  / davis_2dg["Ka_obs"]
+    print(f"  Predicted Glu/2dGlu: {pred_ratio:.1f}×  |  Observed: {obs_ratio:.1f}×")
+
+print()
+
+# ============================================================
+# CSV OUTPUT
+# ============================================================
+outfile = "/home/claude/glycan_scorer/phase2_predictions.csv"
+with open(outfile, "w", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=["name","n_HB","n_CHP","dG_pred","dG_obs","resid","Ka_pred","Ka_obs","conf","source"])
+    writer.writeheader()
+    for r in results:
+        writer.writerow({k: (f"{r[k]:.2f}" if isinstance(r[k], float) else r[k]) for k in writer.fieldnames})
+
+print(f"Results written to: {outfile}")
+print()
+print("=" * 60)
+print("PHASE 1+2 COMPLETE")
+print("=" * 60)
