@@ -1,0 +1,25 @@
+scaffold,name,n_HB,n_CHP,dG_phys,dG_corrected,dG_obs,resid,Ka_corrected,Ka_obs,conf,source
+ConA,ConA + αMeMan,3,2,4.25,-22.00,-22.20,0.20,7147.70,7600,HIGH,Chervenak 1995
+ConA,ConA + αMeGlu,3,1,6.75,-19.50,-19.30,-0.20,2607.31,2400,HIGH,Chervenak 1995
+ConA,ConA + βMeMan,0,0,0.00,-26.25,,,39693.68,0,HIGH,Chervenak 1995
+ConA,ConA + GlcNAc,2,0,17.60,-8.65,,,32.76,0,HIGH,Chervenak 1995
+ConA,ConA + αMeFru,1,0,11.35,-14.90,,,407.68,0,MEDIUM,Chervenak 1995
+ConA,ConA + αMeGal,2,0,15.40,-10.85,,,79.58,,MEDIUM,Inferred from pharmacophore; Dam & Brewer 2002
+WGA,WGA + GlcNAc,4,1,-0.60,-15.50,-15.50,0.00,519.32,410,MEDIUM,Bains 1992
+WGA,WGA + Gal,1,0,15.25,0.35,,,0.87,,MEDIUM,Inferred from WGA specificity (Bains 1992)
+WGA,WGA + Glu,1,0,11.35,-3.55,,,4.19,,LOW,Inferred
+WGA,WGA + (GlcNAc)2,8,2,-1.20,-16.10,-21.30,5.20,661.53,5300,MEDIUM,Bains 1992
+PNA,PNA + Gal,4,2,5.90,-18.90,-18.90,0.00,2046.82,2100,HIGH,Banerjee 1994 [LIT]; PDB 2PEL
+PNA,PNA + Glu,2,0,9.10,-15.70,,,562.95,,MEDIUM,Inferred from PNA selectivity
+PNA,PNA + Man,2,0,13.00,-11.80,,,116.74,,LOW,Inferred
+PNA,PNA + GalNAc,4,1,14.50,-10.30,-20.20,9.90,63.75,3800,MEDIUM,Banerjee 1994 [LIT]
+Gal3,Gal3 + Gal,5,3,1.15,-22.60,-22.60,0.00,9105.00,9091,HIGH,Diehl 2024; PDB 3ZSJ
+Gal3,Gal3 + Glu,3,0,6.85,-16.90,,,913.48,,MEDIUM,Inferred from Gal3 selectivity; Diehl 2024
+Gal3,Gal3 + Man,2,0,13.00,-10.75,,,76.43,,LOW,Inferred
+Gal3,Gal3 + LacNAc,7,3,7.55,-16.20,-26.80,10.60,688.76,50000,MEDIUM,Seetharaman 1998 [LIT]
+Davis,Davis + βGlu,10,2,-4.30,-23.85,-24.40,0.55,15075.33,18600,HIGH,Tromans 2019
+Davis,Davis + βGal,7,1,8.85,-10.70,-12.90,2.20,74.91,180,MEDIUM,Tromans 2019
+Davis,Davis + βMan,7,1,8.85,-10.70,-12.40,1.70,74.91,140,MEDIUM,Tromans 2019
+Davis,Davis + 2dGlu,6,2,2.30,-17.25,-16.70,-0.55,1052.00,725,HIGH,Tromans 2019
+Davis,Davis + GlcNAc,6,0,15.80,-3.75,-7.40,3.65,4.54,20,LOW,Tromans 2019
+Davis,Davis + Fru,4,0,9.40,-10.15,-9.80,-0.35,60.00,50,LOW,Tromans 2019
