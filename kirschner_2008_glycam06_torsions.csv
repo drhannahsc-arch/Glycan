@@ -1,0 +1,125 @@
+source_doi,10.1002/jcc.20820
+source_citation,"Kirschner KN, Yongye AB, Tschampel SM, et al. J Comput Chem 2008;29:622-655"
+glycan_module_target,"G2 (conformational entropy — QM torsion surfaces, rotamer populations)"
+extraction_date,2026-03-12
+notes,"GLYCAM06 force field. QM level: B3LYP/6-31++G(2d,2p)//HF/6-31G*. MD at 300K in TIP3P explicit water."
+
+table,omega_angle_rotamer_populations_GlcpOMe
+sugar,method,gg_pct,gt_pct,tg_pct,J_H5H6R_Hz,J_H5H6S_Hz,source_location
+α-D-GlcpOMe,GLYCAM06 50ns MD,62,36,2,5.4±1.7,2.9±2.0,Table 7
+α-D-GlcpOMe,Expt (ref 144),57,38,5,5.4,2.3,Table 7
+α-D-GlcpOMe,Expt (ref 142),53,47,0,5.49,2.39,Table 7
+
+table,omega_angle_rotamer_populations_GalpOMe
+sugar,method,gg_pct,gt_pct,tg_pct,J_H5H6R_Hz,J_H5H6S_Hz,source_location
+α-D-GalpOMe,GLYCAM06 50ns MD,6,76,18,7.9±1.6,3.7±1.8,Table 7
+α-D-GalpOMe,Expt (ref 142),14,47,39,7.8,6.0,Table 7
+α-D-GalpOMe,Expt (ref 144),16,75,9,8.6,3.7,Table 7
+α-D-GalpOMe,Expt (ref 143 eqA),21,61,18,8.3,4.0,Table 7
+α-D-GalpOMe,Expt (ref 143 eqB1),13,70,17,,,Table 7
+α-D-GalpOMe,Expt (ref 143 eqG),15,69,16,,,Table 7
+
+table,ring_puckering_parameters_Cremer_Pople
+sugar,method,Q_angstrom,theta_deg,source_location
+α-D-GlcpOMe,GLYCAM06 50ns MD,0.55±0.04,6±10,text p24
+α-D-GlcpOMe,neutron diffraction (ref 146),0.57,2.3,text p24
+α-D-GalpOMe,GLYCAM06 50ns MD,0.57±0.04,24±8,text p24
+α-D-GalpOMe,neutron diffraction (ref 147),0.57,4.9,text p24
+α-D-ManpOMe,GLYCAM06 50ns MD,0.55±0.04,1±10,text p24
+α-D-ManpOMe,neutron diffraction (ref 146),0.56,0,text p24
+
+table,ring_J_couplings_Hz
+sugar,spin_pair,expt_Hz,GLYCAM06_Hz,source_location
+α-D-GlcpOMe,J_H1H2,3.8,3.5±0.8,Table 9
+α-D-GlcpOMe,J_H2H3,9.8,9.9±0.4,Table 9
+α-D-GlcpOMe,J_H3H4,9.1,9.7±0.6,Table 9
+α-D-GlcpOMe,J_H4H5,10.1,9.9±0.4,Table 9
+β-D-GlcpOMe,J_H1H2,8.0,9.9±0.5,Table 9
+β-D-GlcpOMe,J_H2H3,9.4,9.7±0.6,Table 9
+β-D-GlcpOMe,J_H3H4,9.2,9.7±0.6,Table 9
+β-D-GlcpOMe,J_H4H5,9.7,10.0±0.4,Table 9
+α-D-GalpOMe,J_H1H2,4.0,3.8±0.8,Table 9
+α-D-GalpOMe,J_H2H3,10.3,10.1±0.2,Table 9
+α-D-GalpOMe,J_H3H4,3.4,3.3±0.7,Table 9
+α-D-GalpOMe,J_H4H5,1.0,3.0±0.7,Table 9 — weak agreement noted
+β-D-GalpOMe,J_H1H2,7.9,9.8±0.9,Table 9
+β-D-GalpOMe,J_H2H3,9.9,10.0±0.4,Table 9
+β-D-GalpOMe,J_H3H4,3.4,3.2±0.8,Table 9
+β-D-GalpOMe,J_H4H5,1.1,2.9±0.7,Table 9 — weak agreement noted
+α-D-ManpOMe,J_H1H2,1.8,2.2±0.5,Table 9
+α-D-ManpOMe,J_H2H3,3.5,3.4±0.8,Table 9
+α-D-ManpOMe,J_H3H4,9.7,9.9±0.6,Table 9
+α-D-ManpOMe,J_H4H5,9.6,10.0±0.4,Table 9
+β-D-ManpOMe,J_H1H2,0.9,3.0±0.7,Table 9 — weak agreement noted
+β-D-ManpOMe,J_H2H3,3.2,3.2±0.8,Table 9
+β-D-ManpOMe,J_H3H4,9.5,10.0±0.3,Table 9
+β-D-ManpOMe,J_H4H5,9.6,10.0±0.4,Table 9
+
+table,interproton_distances_angstrom
+sugar,proton_pair,expt_neutron_A,GLYCAM06_MD_A,source_location
+α-D-GlcpOMe,H1-H2,2.396,2.40±0.1,Table 8
+α-D-GlcpOMe,H1-H3,3.827,3.83±0.1,Table 8
+α-D-GlcpOMe,H1-H5,3.605,3.75±0.1,Table 8
+α-D-GlcpOMe,H2-H3,3.053,3.05±0.1,Table 8
+α-D-GlcpOMe,H3-H4,2.436,2.45±0.1,Table 8
+α-D-GlcpOMe,H3-H5,2.485,2.53±0.2,Table 8
+α-D-GlcpOMe,H4-H5,2.457,2.45±0.1,Table 8
+α-D-GalpOMe,H1-H2,2.473,2.41±0.1,Table 8
+α-D-GalpOMe,H3-H4,3.033,3.05±0.1,Table 8
+α-D-GalpOMe,H3-H5,2.607,2.76±0.2,Table 8
+α-D-GalpOMe,H4-H5,3.050,3.04±0.1,Table 8
+α-D-ManpOMe,H1-H2,2.562,2.52±0.1,Table 8
+α-D-ManpOMe,H2-H3,3.053,3.05±0.1,Table 8
+α-D-ManpOMe,H3-H4,3.070,3.05±0.1,Table 8
+α-D-ManpOMe,H3-H5,2.592,2.66±0.2,Table 8
+
+table,interproton_dihedral_angles_deg
+sugar,dihedral,expt_neutron_deg,GLYCAM06_MD_deg,source_location
+α-D-GlcpOMe,H1C1C2H2,50.49,51.07±7.5,Table 8
+α-D-GlcpOMe,H2C2C3H3,-176.08,-175.74±7.3,Table 8
+α-D-GlcpOMe,H3C3C4H4,53.97,55.99±6.9,Table 8
+α-D-GlcpOMe,H4C4C5H5,-59.23,-58.12±6.8,Table 8
+α-D-GalpOMe,H1C1C2H2,56.86,54.02±7.7,Table 8
+α-D-GalpOMe,H2C2C3H3,-178.44,-171.18±7.9,Table 8
+α-D-GalpOMe,H3C3C4H4,174.53,166.95±8.4,Table 8
+α-D-GalpOMe,H4C4C5H5,-175.73,-171.72±8.4,Table 8
+α-D-ManpOMe,H1C1C2H2,-69.03,-67.21±6.9,Table 8
+α-D-ManpOMe,H2C2C3H3,-53.69,-54.98±6.9,Table 8
+α-D-ManpOMe,H3C3C4H4,172.41,172.99±7.7,Table 8
+α-D-ManpOMe,H4C4C5H5,-173.52,-171.59±8.3,Table 8
+
+table,Neu5Ac_omega8_rotamer_populations
+V1_kcal_mol,trans_pct,gauche_pct,source_location
+-1.0,30,70,Table 6
+-0.8,59,41,Table 6
+-0.6,32,68,Table 6
+-0.4,41,59,Table 6
+-0.2,88,12,Table 6
+0.0,84,16,Table 6
+0.2,67,33,Table 6
+0.4,83,17,Table 6
+0.6,86,14,Table 6
+0.8,88,12,Table 6
+1.0,98,2,Table 6
+optimal_V1,-0.1,81:19 gauche:trans for 1-2-ethanediol,text p16
+
+table,torsion_fit_errors_by_class_kcal_mol
+molecular_class,Error_curve_avg,Error_minima_avg,source_location
+Hydrocarbons,0.15,0.11,Table 5
+Alcohols,0.45,0.28,Table 5
+Ethers,0.56,0.35,Table 5
+Amides,0.64,0.38,Table 5
+Esters,0.44,0.23,Table 5
+Carboxylates,0.72,0.60,Table 5
+Ether-alcohols,0.61,0.59,Table 5
+Ether-amides,1.12,1.10,Table 5
+Alcohol-amides,0.49,0.41,Table 5
+Ether-carboxylates,0.80,0.80,Table 5
+
+table,key_QM_reference_values
+molecule,torsion,barrier_B3LYP_kcal_mol,barrier_GLYCAM06_kcal_mol,barrier_expt_kcal_mol,source_location
+butane,CG-CG-CG-CG trans-gauche,0.95,1.16,0.74-0.90,text p12-13
+butane,eclipsed 0°,5.80,5.51,4.56,text p13
+methanol,H1-CG-OH-HO,1.03,1.08,1.07,text p13
+ethanol,CG-CG-OH-HO trans-gauche,-0.30,0.34,0.40,text p13
+methoxymethane,H1-CG-OS-CG,2.43,2.31,2.62,text p16

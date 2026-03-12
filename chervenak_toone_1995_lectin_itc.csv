@@ -1,0 +1,104 @@
+source_doi,10.1021/bi00005a026
+source_citation,"Chervenak MC, Toone EJ. Biochemistry 1995;34:5685-5695"
+glycan_module_target,"Pred 1 (ConA deoxy answer key cross-check), Pred 3 (cross-lectin selectivity), G4 validation"
+extraction_date,2026-03-12
+notes,"All at 25°C, pH 6.92 (50 mM phosphate, 500 mM NaCl, 1 mM MnCl2, 1 mM CaCl2). Units: ΔG/ΔH/TΔS in kcal/mol, K in M⁻¹. Ligand numbering per Figure 1 in paper."
+
+table,thermodynamics_Table1
+lectin,ligand_number,ligand_name,dG_kcal_mol,dG_err,dH_kcal_mol,dH_err,TdS_kcal_mol,TdS_err,source_location
+Dioclea,1,MeαMan,-4.8,0.05,-7.8,0.6,-2.9,0.7,Table 1
+Dioclea,2,MeβMan,NB,,NB,,NB,,Table 1
+Dioclea,3,MeαGlc,-4.2,0.05,-4.4,0.2,-0.1,0.2,Table 1
+Dioclea,4,MeβGlc,NB,,NB,,NB,,Table 1
+Dioclea,5,MeαGal,NB,,NB,,NB,,Table 1
+Dioclea,6,MeβGal,NB,,NB,,NB,,Table 1
+Dioclea,7,MeαFruc,NB,,NB,,NB,,Table 1
+Dioclea,8,MeβFruc,NB,,NB,,NB,,Table 1
+Dioclea,9,GlcNAc,NB,,NB,,NB,,Table 1
+Dioclea,10,ManNAc,-5.2,0.03,-6.9,0.2,-1.7,0.2,Table 1
+Dioclea,11,ManR(1-2)Man,-5.9,0.02,-6.4,0.07,-0.5,0.05,Table 1
+Dioclea,12,ManR(1-3)Man,-5.5,0.03,-11.4,0.03,-5.1,0.8,Table 1 — note very large ΔH
+Dioclea,13,ManR(1-4)Man,-5.0,0.05,-8.4,0.5,-3.5,0.4,Table 1
+Dioclea,14,ManR(1-6)Man,-5.1,0.03,-8.6,0.3,-3.6,0.2,Table 1
+Dioclea,15,maltose,-4.3,0.02,-4.4,0.09,-0.1,0.07,Table 1
+Dioclea,16,isomaltose,-4.2,0.08,-4.4,2.0,-0.2,2.0,Table 1
+Dioclea,17,trimannoside,-8.2,0.05,-13.0,0.08,-4.8,0.03,Table 1
+ConA,1,MeαMan,-5.3,0.02,-6.8,0.1,-1.5,0.8,Table 1
+ConA,2,MeβMan,NB,,NB,,NB,,Table 1
+ConA,3,MeαGlc,-4.6,0.3,-5.3,0.1,-0.7,0.07,Table 1
+ConA,4,MeβGlc,NB,,NB,,NB,,Table 1
+ConA,5,MeαGal,NB,,NB,,NB,,Table 1
+ConA,6,MeβGal,NB,,NB,,NB,,Table 1
+ConA,7,MeαFruc,NB,,NB,,NB,,Table 1
+ConA,8,MeβFruc,NB,,NB,,NB,,Table 1
+ConA,9,GlcNAc,NB,,NB,,NB,,Table 1
+ConA,10,ManNAc,-5.2,0.02,-5.9,0.1,-0.7,0.08,Table 1
+ConA,11,ManR(1-2)Man,-6.8,0.02,-7.0,0.03,-0.2,0.01,Table 1
+ConA,12,ManR(1-3)Man,-6.0,0.02,-7.4,0.08,-1.4,0.06,Table 1
+ConA,13,ManR(1-4)Man,-5.0,0.03,-7.4,0.2,-2.3,0.3,Table 1 — note ConA 13 same ΔG as Dioclea 13
+ConA,14,ManR(1-6)Man,-5.3,0.04,-6.9,0.4,-1.6,0.4,Table 1
+ConA,15,maltose,-4.4,0.07,-3.7,0.7,0.7,0.6,Table 1
+ConA,16,isomaltose,-4.4,0.04,-4.6,0.2,-0.2,0.16,Table 1
+ConA,17,trimannoside,-7.4,0.07,-10.2,0.1,-2.8,0.03,Table 1
+snowdrop,1,MeαMan,BD,,BD,,BD,,Table 1 — Ka < 100 M⁻¹ estimated
+snowdrop,12,ManR(1-3)Man,-4.8,0.07,-3.1,0.2,1.7,0.1,Table 1 — favorable entropy
+snowdrop,13,ManR(1-4)Man,NB,,NB,,NB,,Table 1
+snowdrop,14,ManR(1-6)Man,-4.2,0.2,-2.1,1.0,2.1,0.8,Table 1 — favorable entropy
+snowdrop,17,trimannoside,-4.8,0.06,-3.9,0.4,0.9,0.34,Table 1 — favorable entropy
+
+table,binding_constants_Table2
+lectin,ligand_number,ligand_name,Ka_M-1,source_location
+Dioclea,1,MeαMan,3.6e3,Table 2
+Dioclea,3,MeαGlc,1.2e3,Table 2
+Dioclea,10,ManNAc,6.3e3,Table 2
+Dioclea,11,ManR(1-2)Man,2.0e4,Table 2
+Dioclea,12,ManR(1-3)Man,1.0e4,Table 2
+Dioclea,13,ManR(1-4)Man,5.1e3,Table 2
+Dioclea,14,ManR(1-6)Man,5.3e3,Table 2
+Dioclea,15,maltose,1.4e3,Table 2
+Dioclea,16,isomaltose,1.2e3,Table 2
+Dioclea,17,trimannoside,7.4e5,Table 2
+ConA,1,MeαMan,7.6e3,Table 2
+ConA,3,MeαGlc,2.4e3,Table 2
+ConA,10,ManNAc,6.3e3,Table 2
+ConA,11,ManR(1-2)Man,1.0e5,Table 2
+ConA,12,ManR(1-3)Man,3.0e4,Table 2
+ConA,13,ManR(1-4)Man,5.1e4,Table 2
+ConA,14,ManR(1-6)Man,6.1e3,Table 2
+ConA,15,maltose,1.6e3,Table 2
+ConA,16,isomaltose,1.7e3,Table 2
+ConA,17,trimannoside,2.6e5,Table 2
+snowdrop,1,MeαMan,<100 (estimated),Table 2 — BD
+snowdrop,12,ManR(1-3)Man,3.3e3,Table 2
+snowdrop,14,ManR(1-6)Man,1.2e3,Table 2
+snowdrop,17,trimannoside,3.0e3,Table 2
+
+table,enthalpy_difference_ConA_vs_Dioclea_Table3
+ligand,dH_ConA_minus_dH_Dioclea_kcal_mol,dG_ConA_minus_dG_Dioclea_kcal_mol,source_location
+MeαMan,+1.0,-0.5,Table 3
+ManR(1-6)Man,+1.8,-0.2,Table 3
+ManR(1-3)Man,+4.0,-0.6,Table 3
+trimannoside,+4.5,+0.3,Table 3 — note: Dioclea binds trimannoside MORE tightly
+
+table,heat_capacity_and_entropy_decomposition_Table4
+lectin,ligand,dCp_cal_mol_K,dS_total_cal_mol_K,dS_solv_cal_mol_K,dS_config_cal_mol_K,source_location
+ConA,MeαMan,-50,-4.9,+12.3,-9.7,Table 4 — note: ΔStrans+rot assumed = -8 eu
+ConA,ManR(1-6)Man,-44,-0.9,+11.3,-4.2,Table 4
+ConA,ManR(1-3)Man,-110,-4.8,+28.2,-25.0,Table 4
+ConA,trimannoside,-93,-12.4,+28.2,-32.6,Table 4
+Dioclea,MeαMan,-56,-9.8,+14.4,-16.2,Table 4
+Dioclea,ManR(1-6)Man,-22,-12.0,+5.6,-9.6,Table 4
+Dioclea,ManR(1-3)Man,-40,-17.2,+10.2,-19.4,Table 4
+Dioclea,trimannoside,-96,-26.4,+24.6,-43.0,Table 4
+
+table,key_physical_insights
+observation,detail,source_location
+enthalpy_entropy_compensation_lectin_structure,"ΔH more negative for Dioclea than ConA by up to 4.5 kcal/mol, but TΔS compensates — ΔG similar or even reversed",Table 3 / text p5692
+snowdrop_entropic_binding,"Snowdrop lectin: ΔH less negative than ΔG, TΔS favorable — opposite to legume lectins",text p5690
+snowdrop_specific_sites,"Snowdrop has distinct 1-3 and 1-6 arm sites, NOT a single high-affinity monosaccharide site",Figure 7 / text p5691
+snowdrop_Ka_trimannoside,"Ka ≈ 3000 M⁻¹ for both trimannoside and 1-3 dimannoside — NOT additive",Table 2 / text p5691
+legume_extended_site,"ConA and Dioclea: single high-affinity site + extended site for trimannoside",Figure 7 / text p5689
+Thr226_to_Gly226,"Key Dioclea vs ConA difference: Thr226→Gly226 near binding site, affects Arg228 flexibility",text p5692
+solvation_25pct_enthalpy,"Solvent reorganization accounts for ~25% of net binding enthalpy in protein-carbohydrate interactions",text p5693
+ionic_strength_effect,"ΔH for ConA/MeαMan correlates linearly with ionic strength (r=0.987)",Figure 3 / text p5688
+cooperativity,"Scatchard plots show positive cooperativity for ConA and Dioclea with trimannoside — temperature dependent",Figures 4-5 / text p5689

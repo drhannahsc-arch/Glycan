@@ -1,0 +1,117 @@
+source_doi,10.1021/cr000401x
+source_citation,"Dam TK, Brewer CF. Chem Rev 2002;102:387-429"
+glycan_module_target,"Pred 2 (monosaccharide Ka), Pred 5 (deoxy additivity)"
+extraction_date,2026-03-12
+notes,"Values extracted from text and tables in review. All ITC at 27°C unless noted. ΔH in kcal/mol, Ka in M⁻¹, ΔG in kcal/mol, TΔS in kcal/mol"
+
+table,ConA_monosaccharide_and_oligosaccharide_binding
+lectin,ligand,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,n_sites_per_monomer,source_location
+ConA,MeαMan,8.2e3,,-8.2,,,text p397 (ref 92)
+ConA,MeαMan,1.2e4,-5.6,-8.4,-2.8,1.0,Table 2 (ref 197)
+ConA,trimannoside 1,4.9e5,,-14.4,,,text p397 (ref 92)
+ConA,trimannoside 1,3.9e5,-7.6,-14.7,-7.1,1.0,Table 2 (ref 197)
+ConA,ManR(1-3)Man,,,,,,"text p397 — constituent disaccharide, Ka and ΔH less than trimannoside"
+ConA,ManR(1-6)Man,,,,,,"text p397 — constituent disaccharide, Ka and ΔH less than trimannoside"
+ConA,biantennary complex 14 (ConA),1.2e6,,-10.6,,,text p400 (ref 92)
+ConA,GlcNAcβ(1-2)Man,,,"low ΔH, favorable TΔS",,,text p397
+ConA,isomaltose,5.1e3,,,,,Figure 1A
+ConA,p-APMan,1.3e4,-5.6,-7.8,-2.2,1.0,Table 2 (ref 197)
+
+table,ConA_deoxy_trimannoside_ΔΔH_values
+lectin,analogue,position_modified,dH_kcal_mol,ddH_vs_trimannoside_kcal_mol,Ka_reduction_fold,source_location
+ConA,trimannoside 1 (parent),none,-14.4,0,1,text p397-398
+ConA,α(1-3)3-deoxy 3,3-OH on α(1-3)Man,-11.0,3.4,~10,text p398 (ref 93)
+ConA,α(1-3)4-deoxy 4,4-OH on α(1-3)Man,,2.1,~5,text p398 (ref 94)
+ConA,α(1-6)3-deoxy 7,3-OH on α(1-6)Man,,~3.2,,Figure 11 / text p399 (ref 94)
+ConA,α(1-6)4-deoxy 8,4-OH on α(1-6)Man,,~3.2,,Figure 11 / text p399 (ref 94)
+ConA,α(1-6)6-deoxy 9,6-OH on α(1-6)Man,,~3.2,,Figure 11 / text p399 (ref 94)
+ConA,α(1-6)2-deoxy 6,2-OH on α(1-6)Man,,0.7,,text p399 (ref 106)
+ConA,core 2-deoxy 10,2-OH on core Man,,1.0,,text p398 (ref 94)
+ConA,core 4-deoxy 11,4-OH on core Man,,2.3,,text p398 (ref 94)
+ConA,tetradeoxy 12,"3,4-deoxy α(1-3) + 2,4-deoxy core","≈MeαMan","≈MeαMan",,text p400 (ref 106)
+ConA,sum of all monodeoxy ΔΔH,all 7 positions,,-17.5,,text p398 — nonlinear vs measured -14.4
+
+table,ConA_deoxy_trimannoside_ΔΔH_values_DGL_comparison
+lectin,analogue,ddH_DGL_kcal_mol,ddH_ConA_kcal_mol,source_location
+DGL,α(1-6)3-deoxy 7,~6.1,~3.2,Figure 11 / text p399
+DGL,α(1-6)4-deoxy 8,~6.1,~3.2,Figure 11 / text p399
+DGL,α(1-6)6-deoxy 9,~6.1,~3.2,Figure 11 / text p399
+DGL,α(1-6)2-deoxy 6,3.4,0.7,text p400
+
+table,DGL_binding
+lectin,ligand,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,n_sites_per_monomer,source_location
+DGL,MeαMan,4.6e3,-4.9,-8.2,-3.3,1.0,Table 3 (ref 197)
+DGL,trimannoside 1,1.2e6,-8.3,-16.2,-7.9,1.0,Table 3 (ref 197)
+DGL,biantennary complex 14,4.7e4,,-4.6,,,text p400
+
+table,WGA_GlcNAc_oligomers
+lectin,ligand,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,source_location
+WGA,GlcNAc,4.1e2,-3.7,-6.1,-2.4,Table 11 (ref 210)
+WGA,(GlcNAc)2,5.3e3,-5.1,-15.6,-10.5,Table 11 (ref 210)
+WGA,(GlcNAc)3,1.11e4,-5.5,-19.4,-13.9,Table 11 (ref 210)
+WGA,(GlcNAc)4,1.23e4,-5.6,-19.2,-13.6,Table 11 (ref 210)
+WGA,(GlcNAc)5,1.91e4,-5.8,-18.2,-12.4,Table 11 (ref 210)
+
+table,UDA_GlcNAc_oligomers
+lectin,ligand,Ka_M-1,dG_kcal_mol,dH_kcal_mol,TdS_kcal_mol,source_location
+UDA,(GlcNAc)2,8.0e2,-3.9,-4.7,-0.8,Table 11 (ref 214)
+UDA,(GlcNAc)3,6.2e3,-5.1,-6.3,-1.2,Table 11 (ref 214)
+UDA,(GlcNAc)4,1.44e4,-5.6,-5.1,0.5,Table 11 (ref 214)
+UDA,(GlcNAc)5,2.65e4,-5.9,-5.1,0.8,Table 11 (ref 214)
+
+table,hevein_GlcNAc_oligomers
+lectin,ligand,Ka_M-1,dG_kcal_mol,dH_kcal_mol,dS_cal_mol_K,source_location
+hevein,(GlcNAc)2,616,-3.8,-6.3,-8.4,Table 10 (ref 209)
+hevein,(GlcNAc)3,8525,-5.4,-8.3,-9.9,Table 10 (ref 209)
+hevein,(GlcNAc)4,10850,-5.5,-9.5,-13.4,Table 10 (ref 209)
+hevein,(GlcNAc)5,474000,-7.8,-9.6,-6.3,Table 10 (ref 209)
+
+table,PNA_binding
+lectin,ligand,Ka_M-1,source_location
+PNA,lactose,1.99e3,text p414 (ref 171)
+PNA,MeαGal,3.08e3,text p414 (ref 171)
+PNA,MeβGal,1.87e3,text p414 (ref 171)
+PNA,T-antigen Galβ(1-3)GalNAc,2.37e4,text p414 (ref 171)
+
+table,SBA_binding
+lectin,ligand,Ka_relative,dH_kcal_mol,source_location
+SBA,MeβGalNAc,50x vs MeβGal,-13.9,text p408 (ref 33)
+SBA,MeβGal,1x,-10.6,text p408 (ref 33)
+SBA,GalNAc,20x vs MeβGal,,text p408 (ref 33)
+SBA,lactose,,-5.5,text p409
+SBA,LacNAc,,-8.2,text p409
+SBA,MeβLacNAc,,-7.5,text p409
+
+table,galectin1_bovine_spleen_disaccharides
+lectin,ligand,dH_kcal_mol,source_location
+galectin-1 bovine,Galβ1-4Glc (lactose),-6.1,text p391 (ref 34)
+galectin-1 bovine,Galβ1-4Man,-8.6,text p391 (ref 34)
+galectin-1 bovine,Galβ1-3Ara,-9.6,text p391 (ref 34)
+galectin-1 bovine,Galβ1S1βGal,-10.0,text p391 (ref 34)
+galectin-1 bovine,Galβ1-4GlcNAc (LacNAc),-7.4,Table 1 (ref 34)
+galectin-1 bovine,Galβ1-3GlcNAc,-5.9,Table 1 (ref 34)
+galectin-1 bovine,Galβ1-4Fruc,-7.2,Table 1 (ref 34)
+
+table,galectin3_human_binding
+lectin,ligand,Ka_M-1,dH_kcal_mol,source_location
+galectin-3,lactose,1160,-4.8,text p392 (ref 51)
+galectin-3,LacNAc,7x lactose,-8.1,text p393 (ref 51)
+galectin-3,LNTet,16x lactose at 8°C,-14.4,text p393 (ref 51)
+galectin-3,A-tetra,37x lactose at 280K,-30.1,text p393 (ref 51)
+galectin-3,2'FL,,-7.2,text p392 (ref 51)
+
+table,GNA_monocot_lectin
+lectin,ligand,Ka_M-1,dH_kcal_mol,dG_kcal_mol,source_location
+GNA,MeαMan,<100,,,text p405 (ref 104)
+GNA,ManR(1-3)Man,3300,-3.1,-4.8,text p405 (ref 104)
+GNA,ManR(1-6)Man,1200,-2.1,-4.2,text p405 (ref 104)
+GNA,trimannoside,3000,-3.9,-4.8,text p405 (ref 104)
+
+table,Diocleinae_lectins_trimannoside_Ka
+lectin,Ka_trimannoside_M-1,Ka_MeαMan_M-1,Ka_complex14_M-1,source_location
+ConA,4.9e5,8.2e3,1.2e6,text p401 / Figure 14 (ref 107)
+C_brasiliensis,3.7e5,1.3e4,,Figure 14 (ref 107)
+D_guianensis,,,relatively high,Figure 14 / text p402
+D_virgata,,,relatively high,Figure 14 / text p402
+DGL,1.2e6,4.6e3,4.7e4,text p399-400 (ref 107)
+D_rostrata,,1.7e3,,text p401 (ref 107)

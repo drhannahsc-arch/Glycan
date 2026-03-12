@@ -1,0 +1,75 @@
+source_doi,10.1007/BF00649173
+source_citation,"Jasra RV, Ahluwalia IC. J Solution Chem 1982;11:325-338"
+glycan_module_target,"G1 (desolvation energy — polyol and sugar dissolution thermodynamics)"
+extraction_date,2026-03-12
+notes,"All ΔHs° in kJ/mol. ΔCp° in J/(K·mol) at 30°C. Cp,2 solid in J/(K·mol). V2° in cm³/mol at 25°C. Uncertainties are 95% confidence."
+
+table,monosaccharides_Table_I
+compound,dHs_25C_kJ_mol,dHs_25C_err,dHs_35C_kJ_mol,dHs_35C_err,dCp_30C_J_K_mol,dCp_30C_err,Cp2_solid_J_K_mol,Cp2_total_J_K_mol,V2_cm3_mol,source_location
+α-D-Glucose,10.70,0.04,12.04,0.04,134,10,223,357,,Table I
+β-D-Glucose,11.04,0.04,,,,,,331,,Table I
+D-Galactose,4.42,0.07,5.70,0.07,128,10,223,351,,Table I
+D-Mannose,17.20,0.06,18.55,0.09,139,14,217,356,,Table I
+D-Fructose,8.80,0.10,11.20,0.09,242,14,215,475,,Table I note: Cp anomalously high
+L-Sorbose,6.94,0.03,9.11,0.05,217,10,233,450,,Table I
+D-Arabinose,13.24,0.05,14.58,0.10,134,12,184,318,,Table I
+D-Xylose,11.98,0.05,12.95,0.10,97,,184,281,,Table I
+L-Xylose,12.19,0.03,13.25,0.03,106,13,184,291,,Table I
+D-Lyxose,10.10,0.10,11.11,0.08,101,12,184,285,,Table I
+D-Ribose,13.04,0.10,14.14,0.09,110,15,184,294,,Table I
+2-Deoxy-D-Glucose,9.43,0.06,11.23,0.15,180,,201,381,,Table I
+2-Deoxy-D-Galactose,10.91,0.10,12.70,0.10,180,10,201,386,,Table I
+6-Deoxy-D-Galactose (L-Fucose),1.97,0.10,3.90,0.10,193,12,201,394,,Table I
+2-Deoxy-D-Ribose,10.73,0.10,12.39,0.07,169,18,164,333,,Table I
+
+table,methylglycosides_Table_II
+compound,dHs_25C_kJ_mol,dHs_25C_err,dHs_35C_kJ_mol,dHs_35C_err,dCp_30C_J_K_mol,dCp_30C_err,Cp2_solid_J_K_mol,Cp2_total_J_K_mol,V2_cm3_mol,source_location
+1-O-Methyl-α-D-Glucopyranoside,3.67,0.07,5.67,0.03,200,10,238,438,133.0,Table II
+1-O-Methyl-β-D-Glucopyranoside,9.18,0.09,11.12,0.06,194,11,238,432,132.1,Table II
+3-O-Methyl-β-D-Glucopyranoside,8.27,0.07,10.19,0.05,192,8,238,430,132.1,Table II
+1-O-Methyl-α-D-Galactopyranoside,-1.07,0.04,0.91,0.01,198,5,238,436,133.0,Table II
+1-O-Methyl-β-D-Galactopyranoside,2.64,0.05,4.64,0.05,198,7,238,436,133.0,Table II
+1-O-Methyl-α-D-Xylopyranoside,1.82,0.05,3.50,0.04,168,7,201,369,116.3,Table II
+1-O-Methyl-β-D-Mannopyranoside,9.09,0.07,11.16,0.06,207,9,238,445,132.8,Table II
+1-O-Methyl-β-D-Xylopyranoside,5.91,0.03,6.89,0.03,170,4,201,371,117.3,Table II
+1-O-Methyl-β-D-Arabinopyranoside,9.58,0.06,11.27,0.06,169,8,201,370,,Table II
+
+table,polyols_Table_III
+compound,dHs_25C_kJ_mol,dHs_25C_err,dHs_35C_kJ_mol,dHs_35C_err,dCp_30C_J_K_mol,dCp_30C_err,Cp2_solid_J_K_mol,Cp2_total_J_K_mol,V2_cm3_mol,source_location
+D-Sorbitol,16.86,0.07,18.18,0.05,194,6,230,424,119.0,Table III
+D-Mannitol,21.54,0.09,23.86,0.04,232,9,229,461,118.2,Table III
+D-Galactitol,29.22,0.12,31.38,0.10,216,16,229,445,119.3,Table III
+D-Arabitol,18.71,0.08,20.30,0.07,159,8,192,351,103.3,Table III
+D-Ribitol,18.55,0.06,20.17,0.10,162,12,192,354,103.1,Table III
+D-Xylitol,22.40,0.12,23.74,0.14,134,9,192,326,100.0,Table III
+meso-Erythritol,22.38,0.10,23.61,0.18,124,18,152,276,87.1,Table III
+Pentaerythritol,22.02,0.12,23.31,0.16,129,20,172,301,86.7,Table III
+myo-Inositol,14.98,0.12,16.46,0.04,148,,221,,,Table III
+
+table,group_substitution_effects_Table_IV
+substitution_type,example,dCp_change_J_K_mol,Cp2_change_J_K_mol,V2_change_cm3_mol,source_location
+OH→OCH3,α-D-Glucose→1-O-Methyl-α-D-Glucoside,66,76,21.59,Table IV
+OH→OCH3,β-D-Glucose→1-O-Methyl-β-D-Glucoside,66,76,20.27,Table IV
+OH→OCH3,D-Galactose→1-O-Methyl-α-D-Galactoside,59,65,21.96,Table IV
+OH→OCH3,D-Mannose→1-O-Methyl-β-D-Mannoside,59,76,20.91,Table IV
+OH→OCH3,D-Xylose→1-O-Methyl-α-D-Xyloside,71,78,20.77,Table IV
+CHOH→CH2,α-D-Glucose→2-Deoxy-D-Glucose,46,19,-1.30,Table IV
+CHOH→CH2,D-Galactose→2-Deoxy-D-Galactose,46,15,,Table IV
+CHOH→CH2,D-Ribose→2-Deoxy-D-Ribose,59,39,-1.76,Table IV
+CH2OH→CH3,D-Galactose→6-Deoxy-D-Galactose,54,25,,Table IV
+CHOH_addition,aldohexose series avg,34,74,15-18,Table IV
+CHOH_addition,glycosidic series avg,30,66,16-17,Table IV
+CHOH_addition,deoxy compounds avg,13,48-61,16.6,Table IV
+CHOH_addition,polyol series,50-70,98-100,16-17,Table IV
+
+table,key_physical_insights
+observation,detail,source_location
+high_positive_Cp,"All polyhydroxy compounds show large positive ΔCp° — act as water structure-promoters",text p333
+stereoisomer_independence,"ΔCp° and Cp,2° essentially identical for stereoisomers within each series",text p335
+anomer_independence,"α vs β orientation of OH or OCH3 shows no change in limiting thermodynamic properties",text p335
+position_independence,"1-O-methyl-glucopyranoside = 3-O-methyl-glucopyranoside in Cp; 2-deoxy = 6-deoxy in glucose",text p335
+D_L_equivalence,"D-xylose = L-xylose in all properties",text p335
+water_compatibility,"Equatorial OH oxygens 4.82Å apart matches second-nearest-neighbor O-O in water",text p333
+OH_group_Cp_contribution,"In polyhydroxy solutes OH group contributes MORE to Cp than in apolar alcohols",text p333
+deoxy_vs_parent,"CHOH→CH2 decreases Cp by 46 J/K/mol for hexoses, 59 for pentoses",Table IV
+methylation_Cp_increase,"OH→OCH3 increases ΔCp° by ~66 J/K/mol",Table IV

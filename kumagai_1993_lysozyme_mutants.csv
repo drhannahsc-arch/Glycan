@@ -1,0 +1,50 @@
+source_doi,10.1111/j.1432-1033.1993.tb17645.x
+source_citation,"Kumagai I, Maenaka K, Sunada F, Takeda S, Miura K. Eur J Biochem 1993;212:151-156"
+glycan_module_target,"Pred 3 (lysozyme subsite mutations — aromatic contact contribution to sugar binding)"
+extraction_date,2026-03-12
+notes,"Hen egg-white lysozyme. Substrate: PNP-(GlcNAc)5. Products: PNP-GlcNAc (mode 1: cleavage D-E) and PNP-(GlcNAc)2 (mode 2: cleavage C-D). 37°C, pH 5.0, 50 mM NaOAc."
+
+table,subsite_residues_and_mutations
+residue,wild_type,subsite,interaction_type,mutations_tested,source_location
+62,Trp,B (apolar) + C (H-bond to O6),CH-π with sugar ring in B; H-bond to O6 in C,"Tyr, Phe, His",text p151 + Fig 2
+101,Asp,B,H-bond to O6 of sugar in subsite B,Gly,text p151
+37,Asn,F (predicted),predicted H-bond to primary alcohol of sugar in F,Gly,text p151
+
+table,hydrolytic_activity_position62_mutants_Figure3
+mutant,total_activity_pct_of_WT,PNP_GlcNAc_pct_of_WT,PNP_GlcNAc2_pct_of_WT,ratio_mode2_mode1,notes,source_location
+wild-type (Trp62),100,~55,~45,~0.82,mode 1 (A-E binding) dominant,Figure 3
+Trp62Tyr,~140,~55,~85,~1.55,total activity UP; mode 2 (B-F binding) increased,Figure 3
+Trp62Phe,~160,~60,~100,~1.67,total activity UP; mode 2 increased further,Figure 3
+Trp62His,~120,~25,~95,~3.8,ratio REVERSED — mode 2 now dominant,Figure 3
+
+table,double_mutant_activities_Figure5
+mutant,total_activity_pct_of_WT,ratio_mode2_mode1_approx,notes,source_location
+Asp101Gly,~80,increased vs WT,removal of H-bond to B-site sugar shifts binding mode,Figure 5
+Trp62Tyr+Asp101Gly,~200,highest activity of all mutants,synergistic increase in mode 2,Figure 5
+Trp62His+Asp101Gly,~100,drastically altered binding mode,marked preference for B-F binding,Figure 5
+
+table,Asn37_mutant_effects_Figure6
+mutant,effect_on_binding_mode,notes,source_location
+Asn37Gly,increased mode 1 (A-E) relative to mode 2,reverse effect to Asp101Gly — supports Asn37 involvement in F-site,Figure 6
+Trp62Tyr+Asn37Gly,partially restored wild-type ratio,opposing effects partially cancel,Figure 6
+Trp62His+Asn37Gly,partially restored wild-type ratio,,Figure 6
+
+table,NMR_structural_analysis
+observation,detail,source_location
+hydrophobic_box_intact,"Ile98, Met105, Leu17 resonances scarcely shifted in Trp62 mutants — global fold preserved",Figure 7 / text p154
+Trp63_NlH_shifted,"Trp62Phe: downfield shift; Trp62His: upfield shift — different local effects",Figure 8 / text p154
+Trp108_NlH_shifted,"Trp62Phe: upfield shift; Trp62His: downfield shift — opposite to Trp63",Figure 8 / text p154
+Cys76_NH_shifted,considerable shift in both Trp62 mutants,Figure 8 / text p154
+local_changes_residues_72-76,largest backbone chemical shift changes in loop region 72-76,Figure 9 / text p155
+beta_sheet_41-60_perturbed,three-stranded antiparallel β-sheet containing Asp52 (catalytic) shows changes,Figure 9 / text p155
+
+table,key_physical_insights_for_glycan_module
+insight,detail,source_location
+Trp62_CH_pi_essential,"Replacing Trp62 reduces nonpolar (CH-π) interaction with sugar in subsite B, shifts binding mode",text p155-156
+aromatic_size_matters,"Trp→Tyr/Phe retains some aromatic contact; Trp→His nearly eliminates it → ratio reversal",Figure 3
+H_bond_O6_matters,"Asp101Gly removes H-bond to sugar O6 in subsite B → shifts binding preference",Figure 5 / text p156
+subsite_F_Asn37,"Asn37Gly increases A-E binding mode, supporting Asn37 role in F-site interaction",Figure 6 / text p156
+binding_vs_catalysis,"Double mutant Trp62His+Asp101Gly: drastic binding mode change WITHOUT significant loss of enzymic activity",Abstract
+local_not_global,"Mutations at position 62 cause local structural changes (residues 41-78) but preserve global fold",Figure 9 / text p155-156
+human_lysozyme_analogy,"Human lysozyme (Tyr63 at equivalent position) shows PNP-GlcNAc/PNP-(GlcNAc)2 ratio similar to Trp62Tyr mutant",text p156
+binding_constant_reduction,"Ka of (GlcNAc)3 to Trp62Tyr and Trp62Phe mutants several times lower than wild-type (ref to Kumagai 1992)",text p155

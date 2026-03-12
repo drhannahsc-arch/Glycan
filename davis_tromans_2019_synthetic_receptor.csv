@@ -1,0 +1,65 @@
+source_doi,10.1038/s41557-018-0155-z
+source_citation,"Tromans RA, Carter TS, Chabanne L, Crump MP, Li H, Matlock JV, Orchard MG, Davis AP. Nature Chem 2019;11:52-56"
+glycan_module_target,"Pred 7 (synthetic receptor Ka), G4 validation gate"
+extraction_date,2026-03-12
+notes,"Receptor 2 = hexaurea cage with TEM aromatic surfaces. All at 298K, 10 mM phosphate pH 7.4. Ka by NMR in D2O and ITC in H2O."
+
+table,binding_affinities_Figure4
+substrate,substrate_number,Ka_NMR_M-1,Ka_ITC_M-1,notes,source_location
+D-Glucose,10,18000,18600,all-equatorial β-pyranoside; 10 intermolecular H-bonds predicted,Figure 4 + text p9
+Methyl β-D-Glucoside,11,7500,7900,all-equatorial,Figure 4
+D-Glucuronic acid,12,n.d.,5300,all-equatorial; NMR broadening,Figure 4
+D-Xylose,13,n.d.,5800,all-equatorial pentose; NMR broadening,Figure 4
+2-Deoxy-D-Glucose,14,n.d.,725,removing 2-OH reduces Ka 25-fold,Figure 4
+D-Galactose,15,130,180,C4 epimer of glucose; ~100x weaker,Figure 4
+D-Mannose,16,140,140,C2 epimer of glucose; ~100x weaker,Figure 4
+D-Ribose,17,270,220,,Figure 4
+D-Fructose,18,51,60,,Figure 4
+D-Cellobiose,19,31,30,,Figure 4
+N-Acetylglucosamine,20,NB,NB,all-equatorial but NHAc prevents binding; ≥1000:1 selectivity,Figure 4
+L-Fucose,,NB,NB,,Figure 4
+Sucrose,,NB,NB,,Figure 4
+Lactose,,NB,NB,,Figure 4
+Maltose,,NB,NB,,Figure 4
+Maltotriose,,NB,NB,,Figure 4
+D-Glucosamine,,NB,NB,,Figure 4
+N-Acetylmannosamine,,NB,NB,,Figure 4
+Gluconic acid,,NB,NB,,Figure 4
+Ascorbic acid,,NB,NB,known CGM interferent — does NOT bind,Figure 4
+Paracetamol,,NB,NB,known CGM interferent — does NOT bind,Figure 4
+
+table,ITC_thermodynamics
+substrate,Ka_ITC_M-1,Ka_err,dG_kJ_mol,dG_err,dH_kJ_mol,dH_err,TdS_kJ_mol,source_location
+D-Glucose,18600,2700,-24.4,3.5,-7.83,1.12,16.56,Figure 3b — note: binding is ENTROPICALLY driven
+
+table,NMR_chemical_shifts_bound_glucose
+proton,delta_free_ppm,delta_bound_ppm,delta_delta_ppm,notes,source_location
+H1,4.63,3.72,-0.91,major bound state,Figure 3c table
+H2,3.23,2.34,-0.89,,Figure 3c table
+H3,3.47,2.37,-1.10,,Figure 3c table
+H4,3.39,1.63,-1.76,largest upfield shift — deepest in cavity,Figure 3c table
+H5,3.45,1.94,-1.51,,Figure 3c table
+H6,3.71,3.23,-0.48,CH2OH protrudes from cavity,Figure 3c table
+H6',3.88,3.64,-0.24,,Figure 3c table
+
+table,media_robustness
+medium,Ka_M-1,notes,source_location
+water pH 7.4,18600,,Figure 3b
+PBS pH 6,17300,,text p15
+PBS pH 7,~18000,,text p15
+PBS pH 8,18300,,text p15
+DMEM cell culture,~5300,reduced by Ca2+/Mg2+,text p15
+Leibovitz L-15,~5300,reduced by Ca2+/Mg2+,text p15
+human blood serum (glucose-depleted),11300,after glucose oxidase treatment + dialysis,text p15
+
+table,design_principles
+feature,detail,source_location
+H_bond_count,10 intermolecular H-bonds predicted in complex with β-D-glucose,Figure 1d / text p4
+cavity_separation,TEM rings ~8.4 Å apart — ideal for all-equatorial carbohydrate,text p4
+CH_pi_contacts,two TEM aromatic surfaces sandwich glucose α-face and β-face axial CH groups,Figure 1a-b
+selectivity_mechanism,"Inversion of any hydroxyl (Gal=C4, Man=C2) disrupts H-bond network → ~100x loss",text p12
+2-deoxy_penalty,removing 2-OH = 25x Ka reduction despite no steric clash → H-bond essential,Figure 4 / text p12
+comparison_to_ConA,"ConA Ka ~500 M⁻¹ for glucose; receptor 2 Ka = 18000 M⁻¹ — 36x stronger",text p2-3
+comparison_to_previous_synthetic,"Previous best synthetic lectin Ka ~250 M⁻¹; receptor 2 is ~72x stronger",text p3
+thermal_stability,no change by ¹H NMR after 150°C for 1 hour,text p15
+cytotoxicity,no toxicity to HeLa cells at up to 1 mM for 18 hours,text p15
