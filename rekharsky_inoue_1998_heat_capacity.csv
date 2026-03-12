@@ -1,0 +1,54 @@
+source,doi,table,host,guest,solvent,T_K,log_K,dG_kJ_mol,dH_kJ_mol,TdS_kJ_mol,dCp_J_mol_K,method,orig_ref
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-propanol,H2O,288,,,-8.17,-4.33,3.8,-240,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-propanol,H2O,298,,,-7.75,-6.81,1.0,-240,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-propanol,H2O,308,,,-7.27,-9.13,-1.8,-240,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-butanol,H2O,288,,,-11.25,-7.18,4.1,-348,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-butanol,H2O,298,,,-10.95,-10.70,0.2,-348,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-butanol,H2O,308,,,-10.50,-14.13,-3.6,-348,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-pentanol,H2O,288,,,-14.19,-10.49,3.7,-432,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-pentanol,H2O,298,,,-13.64,-14.92,-1.3,-432,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-pentanol,H2O,308,,,-13.5,-19.12,-4.7,-432,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-hexanol,H2O,288,,,-16.33,-12.9,3.4,-561,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-hexanol,H2O,298,,,-16.25,-18.2,-1.9,-561,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-hexanol,H2O,308,,,-15.36,-24.1,-8.9,-561,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-heptanol,H2O,288,,,-17.5,-16.2,1.3,-604,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-heptanol,H2O,298,,,-17.5,-22.8,-5.3,-604,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,1-heptanol,H2O,308,,,-17.1,-27.5,-10.4,-604,cal,8
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,pentylammonium,H2O (pH 6.9),288,2.045,-11.26,-10.8,0.5,-65,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,pentylammonium,H2O (pH 6.9),298,1.968,-11.23,-13.6,-2.4,-65,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,pentylammonium,H2O (pH 6.9),308,1.914,-11.28,-16.0,-4.8,-65,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,pentylammonium,H2O (pH 6.9),318,1.778,-10.82,-19.2,-8.4,-65,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexylammonium,H2O (pH 6.9),288,2.685,-14.78,-13.9,0.8,-78,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexylammonium,H2O (pH 6.9),298,2.583,-14.74,-17.6,-2.9,-78,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexylammonium,H2O (pH 6.9),308,2.479,-14.61,-20.9,-6.3,-78,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexylammonium,H2O (pH 6.9),318,2.356,-14.34,-23.9,-9.6,-78,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptylammonium,H2O (pH 6.9),288,3.137,-17.26,-15.5,1.8,-92,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptylammonium,H2O (pH 6.9),298,3.03,-17.3,-19.9,-2.6,-92,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptylammonium,H2O (pH 6.9),308,2.898,-17.08,-23.6,-6.6,-92,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptylammonium,H2O (pH 6.9),318,2.772,-16.88,-27.3,-10.4,-92,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,octylammonium,H2O (pH 6.9),288,3.49,-19.2,-17.5,1.7,-108,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,octylammonium,H2O (pH 6.9),298,3.37,-19.2,-22.0,-2.9,-108,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,octylammonium,H2O (pH 6.9),308,3.20,-18.8,-27.1,-8.3,-108,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,octylammonium,H2O (pH 6.9),318,3.06,-18.7,-31.1,-12.4,-108,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexanoate,H2O (pH 6.9),288,2.554,-14.06,-11.0,3.1,-74,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexanoate,H2O (pH 6.9),298,2.46,-14.1,-14.5,-0.4,-74,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexanoate,H2O (pH 6.9),308,2.396,-14.13,-17.0,-3.0,-74,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,hexanoate,H2O (pH 6.9),318,2.310,-14.06,-20.5,-6.4,-74,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptanoate,H2O (pH 6.9),288,3.017,-16.60,-14.0,2.6,-84,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptanoate,H2O (pH 6.9),298,2.911,-16.61,-17.7,-1.1,-84,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptanoate,H2O (pH 6.9),308,2.818,-16.61,-20.9,-4.3,-84,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,heptanoate,H2O (pH 6.9),318,2.701,-16.44,-24.7,-8.2,-84,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,cyclohexanol,H2O (pH 6.9),288,2.93,-16.1,-2.8,13.2,-79,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,cyclohexanol,H2O (pH 6.9),298,2.838,-16.19,-6.5,9.7,-79,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,cyclohexanol,H2O (pH 6.9),308,2.773,-16.35,-9.8,6.6,-79,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,cyclohexanol,H2O (pH 6.9),318,2.712,-16.51,-13.0,3.6,-79,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,4-(hydroxyphenethyl)ammonium,H2O (pH 6.9),288,1.919,-10.56,-12.3,-1.8,-36,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,4-(hydroxyphenethyl)ammonium,H2O (pH 6.9),298,1.845,-10.53,-13.8,-3.4,-36,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,4-(hydroxyphenethyl)ammonium,H2O (pH 6.9),308,1.778,-10.48,-15.2,-4.8,-36,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,4-(hydroxyphenethyl)ammonium,H2O (pH 6.9),318,1.690,-10.29,-16.9,-6.6,-36,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,phenethylammonium,H2O (pH 6.9),298,1.38,-7.9,-6.4,1.5,-58,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,phenethylammonium,H2O (pH 6.9),308,1.41,-8.3,-8.8,-0.5,-58,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,phenethylammonium,H2O (pH 6.9),318,1.41,-8.6,-11.3,-2.8,-58,cal,10
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1α,benzene,H2O,298,1.500,-8.56,-13.1,-4.5,-272,vap,29
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1β,benzene,H2O,298,2.228,-12.72,-1.9,10.8,-498,vap,29
+"Rekharsky & Inoue 1998",10.1021/cr970015o,3,1γ,benzene,H2O,298,0.96,-5.47,14.2,19.7,-1340,vap,29

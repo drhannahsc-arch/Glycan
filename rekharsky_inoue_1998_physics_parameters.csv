@@ -1,0 +1,84 @@
+## Rekharsky & Inoue, Chem Rev 1998, 98, 1875-1917
+## DOI: 10.1021/cr970015o
+## Physics-derived parameters for MABE calibration
+## All values at 298.15 K unless otherwise noted
+
+## ============================================================
+## TABLE 4: Unit increments per CH2 (d∆G°/dNC, d∆H°/dNC)
+## Units: kJ/mol per CH2 group
+## ============================================================
+parameter,host,guest_series,ddG_per_CH2_kJ_mol,ddH_per_CH2_kJ_mol,table,notes
+unit_increment,α-CD,1-alkanol,-3.0,-4.0,4,plot_a
+unit_increment,α-CD,sec-alkanol,-2.5,-3.5,4,plot_b
+unit_increment,α-CD,1_2-alkanediol,-3.5,-4.0,4,plot_c
+unit_increment,α-CD,alpha_omega-alkanediol,-2.9,-2.6,4,plot_d
+unit_increment,α-CD,alkylammonium,-3.1,-3.3,4,plot_e
+unit_increment,α-CD,alkylamine,-2.8,-0.65,4,plot_f
+unit_increment,α-CD,alkanoate,-3.2,-2.6,4,plot_g
+unit_increment,α-CD,alkanoic_acid,-2.3,-6.0,4,plot_h
+unit_increment,α-CD,alkanedioate,-2.8,-3.0,4,plot_i
+unit_increment,α-CD,alkanedioic_acid,-0.8,-12.2,4,poor_correlation_excluded_from_mean
+unit_increment,α-CD,alkylurea,-4.7,-2.8,4,plot_k
+unit_increment,α-CD,MEAN,-3.1,-3.3,4,std_dev_0.6_and_1.3_respectively
+unit_increment,β-CD,1-alkanol,-3.1,-1.7,4,plot_a
+unit_increment,β-CD,sec-alkanol,-2.8,-1.1,4,plot_b
+unit_increment,β-CD,alkylammonium,-2.3,-2.3,4,plot_e
+unit_increment,β-CD,alkanoate,-3.3,-6.2,4,plot_g
+unit_increment,β-CD,alkanoic_acid,-2.2,-1.3,4,poor_correlation
+unit_increment,β-CD,cycloalkanol,-3.5,-4.8,4,plot_l
+unit_increment,β-CD,alkylbarbituric_acid,-1.8,-5.1,4,plot_m
+unit_increment,β-CD,alkylthiobarbituric_acid,-1.7,-3.5,4,plot_n
+unit_increment,β-CD,omega-phenylalkylamine,-3.7,-2.8,4,plot_o
+unit_increment,β-CD,omega-phenylalkanoate,-4.0,-2.1,4,plot_p
+unit_increment,β-CD,MEAN,-2.8,-3.3,4,std_dev_0.8_and_1.6_respectively
+unit_increment,transfer_water_to_hexane,reference,-3_to_-4,,text_p1904,Tanford_hydrophobic_effect
+unit_increment_enthalpy,transfer_water_to_nonpolar,reference,,-1.5,text_p1906,solution_enthalpy_series_refs_163-166
+
+## ============================================================
+## OH HYDROGEN BOND CONTRIBUTIONS (Section V.A.2, p1907)
+## Phenolic OH...O hydrogen bond to β-CD peripheral hydroxyls
+## ============================================================
+parameter,host,guest_pair,ddG_per_OH_kJ_mol,ddH_per_OH_kJ_mol,source,notes
+OH_hbond,β-CD,tyramine_vs_phenethylamine,-2.63,-7.4,Table1+text_p1907,phenolic_OH
+OH_hbond,β-CD,3-(4-OH-phenyl)propionate_vs_3-phenylpropionate,-1.71,-6.9,Table1+text_p1907,phenolic_OH
+OH_hbond,β-CD,3-(2-OH-phenyl)propionate_vs_3-phenylpropionate,1.51,-7.8,Table1+text_p1907,ortho_steric_penalty_destabilizes
+OH_hbond_range,β-CD,all_pairs,-1.5_to_-2.5,-6.9_to_-7.8,text_p1907,range_across_guest_pairs
+OH_aliphatic_weak,α-CD_and_β-CD,ephedrines_vs_phenethylamine,small,small,text_p1908,weaker_than_phenolic
+
+## ============================================================
+## HEAT CAPACITY DATA (Table 3 and text p1910)
+## Units: J/(mol·K) per CH2 group
+## ============================================================
+parameter,host,guest_series,dCp_per_CH2_J_mol_K,source,notes
+heat_capacity_per_CH2,α-CD,alkylammonium_NC5-8,-56,Table3+text_p1910,identical_to_water-to-nonpolar_transfer
+heat_capacity_per_CH2,α-CD,alkanoate_NC5-6,-56,Table3+text_p1910,same_as_ammonium_series
+heat_capacity_per_CH2,α-CD,1-alkanol,-100,Table3+text_p1910,unexplained_discrepancy_with_above
+heat_capacity_per_CH2,β-CD,methyl_on_aromatic,-33,text_p1910,smaller_cavity_mismatch
+heat_capacity_per_CH2,transfer_water_to_nonpolar,reference,-50_to_-60,text_p1910,refs_163-166_213
+heat_capacity_OH_hbond,β-CD,phenolic_OH,+75,text_p1910,H-bond_weakens_with_increasing_T
+
+## ============================================================
+## ENTHALPY-ENTROPY COMPENSATION (Table 5, p1912)
+## T∆S° = α·∆H° + T∆S0°
+## α = slope (fraction of ∆∆H° canceled by ∆∆S°)
+## T∆S0° = intercept (intrinsic entropic stabilization at ∆H°=0)
+## ============================================================
+parameter,host,alpha,TdS0_kJ_mol,n_data_sets,correlation_r,source
+EEC,α-CD,0.79,8,524,0.90,Table5_tentative
+EEC,β-CD,0.80,11,488,0.89,Table5_tentative
+EEC,γ-CD,0.97,15,58,0.93,Table5_tentative
+EEC,all_natural_CD,0.88,12,1070,0.92,Table5
+EEC,modified_CD,0.99,17,128,0.99,Table5_mostly_β-CD_derivatives
+
+## ============================================================
+## KEY PHYSICAL CONCLUSIONS (Section V.A.1, p1904-1906)
+## ============================================================
+## 1. CH2 inclusion is ENTHALPY-DRIVEN: avg d∆G°/dNC ≈ d∆H°/dNC for both α and β
+## 2. Entropy term CONTROLS ultimate stability (can cancel or enhance enthalpic gain)
+## 3. d∆G°/dNC ≈ -3 kJ/mol matches water→hexane transfer (hydrophobic effect)
+## 4. d∆H°/dNC ≈ -3.3 kJ/mol is MORE negative than water→nonpolar transfer (≥-1.5)
+##    → van der Waals contacts in cavity contribute beyond classical hydrophobic effect
+## 5. Slope remains constant up to NC=10 despite cavity depth only 7.9 Å
+##    → "expanded hydrophobic cavity" effect
+## 6. Only the part of guest INSIDE cavity contributes to thermodynamics
+##    → hydrophilic groups outside cavity do NOT affect ΔG°, ΔH°
